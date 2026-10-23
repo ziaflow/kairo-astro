@@ -1,4 +1,5 @@
 import { $, $$ } from '@/utils/dom';
+import { subscribe } from '@/utils/customer-io';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -33,12 +34,14 @@ export default function init() {
         return;
       }
       setState('loading', form.dataset.msgLoading ?? '');
-      setTimeout(() => {
-        setState('success', form.dataset.msgSuccess ?? '');
-        form.closest('footer')?.querySelector('[data-signal-line]')?.dispatchEvent(new CustomEvent('signal:pulse'));
-        input.value = '';
-        input.disabled = true;
-      }, 1100);
+      if (!subscribe(input.value)) {
+        setState('error', 'We could not subscribe you. Please try again later.');
+        return;
+      }
+      setState('success', form.dataset.msgSuccess ?? '');
+      form.closest('footer')?.querySelector('[data-signal-line]')?.dispatchEvent(new CustomEvent('signal:pulse'));
+      input.value = '';
+      input.disabled = true;
     });
   });
 }

@@ -1,18 +1,48 @@
 ---
-import Compare from '@/components/pricing/compare.astro';
-import Faq from '@/components/pricing/faq.astro';
-import Plans from '@/components/pricing/plans.astro';
-import SalesForm from '@/components/pricing/sales-form.astro';
+import Button from '@/components/shared/ui/button.astro';
 import PageHero from '@/components/shared/page-hero.astro';
-import { pricingPage as page } from '@/data/pages';
+import { bookingUrl } from '@/data/services';
 import Layout from '@/layouts/layout.astro';
 import { pageTitle } from '@/utils/generate-meta-data';
+
+const engagements = [
+  ['Strategy & audit', 'For teams that need a clear diagnosis, prioritized roadmap, and measurement plan before committing to a build.'],
+  ['Project delivery', 'A defined website, automation, SEO, advertising, cloud, or custom software engagement with clear scope and milestones.'],
+  ['Ongoing growth', 'Continuous optimization, reporting, maintenance, and campaign support after the core system is live.'],
+];
 ---
 
-<Layout title={pageTitle(page.meta.title)} image="/images/og/pricing.jpg" description={page.meta.description}>
-  <PageHero lines={page.hero.lines} accent={page.hero.accent} intro={page.hero.intro} />
-  <Plans />
-  <Compare />
-  <Faq />
-  <SalesForm />
+<Layout
+  title={pageTitle('Pricing & Transparent Packages')}
+  description="Explore flexible, transparent pricing for digital transformation, custom software, and AI automation tailored to your business goals.">
+  <PageHero
+    lines={['Pay for the', 'work you need.']}
+    accent={1}
+    intro="Every engagement is scoped around the outcome, current systems, and level of support required. You receive a clear proposal before work begins."
+  />
+  <section class="border-t border-line" aria-labelledby="engagements-title">
+    <div class="shell py-24 md:py-32">
+      <h2 id="engagements-title" class="max-w-[13ch] font-display text-title font-bold text-bone" data-split>
+        Three straightforward ways to work together.
+      </h2>
+      <div class="mt-14 grid border-t border-l border-line md:grid-cols-3">
+        {engagements.map(([title, body], index) => (
+          <article class="min-h-72 border-r border-b border-line p-8" data-reveal>
+            <p class="font-mono text-label text-signal">{String(index + 1).padStart(2, '0')}</p>
+            <h3 class="mt-10 font-display text-3xl font-bold text-bone">{title}</h3>
+            <p class="mt-4 text-mute">{body}</p>
+          </article>
+        ))}
+      </div>
+      <div class="mt-14 flex flex-col gap-6 border-t border-line pt-10 md:flex-row md:items-center md:justify-between">
+        <p class="max-w-[54ch] text-lead text-mute">
+          Tell us what you are trying to change. We will recommend the smallest sensible scope and provide the investment, timeline, and deliverables in writing.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <Button label="Request a proposal" href={bookingUrl} />
+          <Button label="Email ZiaFlow" href="mailto:info@ziaflow.com" variant="outline" />
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

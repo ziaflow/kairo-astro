@@ -33,4 +33,22 @@ const journal = defineCollection({
   }),
 });
 
-export const collections = { customers, journal };
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './data/blog' }),
+  schema: z.object({
+    publishDate: z.coerce.date(),
+    title: z.string(),
+    excerpt: z.string(),
+    image: z.string().optional(),
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    author: z.string().optional(),
+    metadata: z
+      .object({
+        canonical: z.string().url().optional(),
+      })
+      .optional(),
+  }),
+});
+
+export const collections = { customers, journal, blog };

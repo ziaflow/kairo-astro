@@ -1,0 +1,78 @@
+---
+import Button from '@/components/shared/ui/button.astro';
+import PageHero from '@/components/shared/page-hero.astro';
+import { bookingUrl, type ServicePage } from '@/data/services';
+import { site } from '@/data/site';
+import Layout from '@/layouts/layout.astro';
+import { pageTitle } from '@/utils/generate-meta-data';
+
+interface Props {
+  service: ServicePage;
+}
+
+const { service } = Astro.props;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: service.name,
+  description: service.meta.description,
+  url: new URL(`/services/${service.slug}`, site.url).href,
+  provider: {
+    '@type': 'ProfessionalService',
+    name: site.name,
+    url: site.url,
+    telephone: '+1-602-834-4239',
+    areaServed: { '@type': 'State', name: 'Arizona' },
+  },
+};
+---
+
+<Layout title={pageTitle(service.meta.title)} description={service.meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <PageHero lines={[service.headline]} intro={service.intro}>
+    <div class="md:col-span-5 md:col-start-2" data-intro>
+      <p class="font-mono text-label text-signal uppercase">{service.tagline}</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <Button label="Book consultation" href={bookingUrl} />
+        <Button label="Call (602) 834-4239" href="tel:+16028344239" variant="outline" />
+      </div>
+    </div>
+  </PageHero>
+
+  <section class="border-t border-line" aria-labelledby="service-features">
+    <div class="shell py-24 md:py-32">
+      <p class="font-mono text-label text-signal uppercase">{service.name}</p>
+      <h2 id="service-features" class="mt-4 max-w-[13ch] font-display text-title font-bold text-bone" data-split>
+        {service.featuresTitle}
+      </h2>
+      <div class="mt-14 grid border-t border-l border-line md:grid-cols-2 lg:grid-cols-3">
+        {service.features.map((feature, index) => (
+          <article class="min-h-64 border-r border-b border-line p-7 md:p-9" data-reveal>
+            <p class="font-mono text-label text-dim">{String(index + 1).padStart(2, '0')}</p>
+            <h3 class="mt-10 font-display text-2xl font-bold text-bone">{feature.title}</h3>
+            <p class="mt-4 max-w-[38ch] text-mute">{feature.description}</p>
+            {feature.href && (
+              <a class="mt-6 inline-block text-sm font-medium text-signal underline underline-offset-4" href={feature.href}>
+                {feature.linkLabel}
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-line bg-ink-2" aria-labelledby="service-cta">
+    <div class="shell flex flex-col gap-10 py-24 md:flex-row md:items-end md:justify-between md:py-32">
+      <div>
+        <h2 id="service-cta" class="max-w-[12ch] font-display text-title font-bold text-bone" data-split>
+          {service.cta}
+        </h2>
+        <p class="mt-6 max-w-[46ch] text-lead text-mute">
+          Tell us where growth is getting stuck. We will map the shortest path from the current system to a measurable result.
+        </p>
+      </div>
+      <Button label="Talk with ZiaFlow" href="/contact" />
+    </div>
+  </section>
+</Layout>

@@ -3,36 +3,43 @@ import type { FooterGroup } from '@/interface';
 
 export const footerGroups: FooterGroup[] = [
   {
-    title: 'Product',
+    title: 'Services',
     links: [
-      { label: 'How it works', href: '/#how' },
-      { label: 'Capabilities', href: '/#capabilities' },
-      { label: 'Pricing', href: '/pricing' },
-      { label: site.cta.secondary.label, href: site.cta.secondary.href },
+      { label: 'SEO', href: '/services/seo' },
+      { label: 'Automation & AI', href: '/services/automation' },
+      { label: 'Web development', href: '/services/web-development' },
+      { label: 'PPC management', href: '/services/ppc' },
     ],
   },
   {
-    title: 'Company',
+    title: 'ZiaFlow',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Customers', href: '/customers' },
-      { label: 'Journal', href: '/journal' },
-      { label: 'Careers', href: '/about#roles' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Pricing', href: '/pricing' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Privacy', href: '/privacy' },
+      { label: 'Terms', href: '/terms' },
     ],
   },
 ];
 
 export const footerCopy = {
   newsletter: {
-    title: 'One short email a week on acting before it is too late.',
+    title: 'Practical ideas for smarter growth systems.',
     label: 'Work email',
     placeholder: 'you@company.com',
     note: 'No spam. Unsubscribe in one click.',
     loading: 'Subscribing...',
-    success: 'You are in. The first issue lands on Friday.',
+    success: 'Thanks — you are on the list.',
     error: 'That email looks incomplete. Try name@company.com.',
   },
   followTitle: 'Follow',
   backToTop: 'Back to top',
-  legal: `© ${new Date().getFullYear()} ${site.legalName}`,
+  legal: `© ${new Date().getFullYear()} ${site.legalName} · Phoenix, Arizona`,
 };

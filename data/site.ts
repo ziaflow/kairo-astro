@@ -1,22 +1,21 @@
 import type { SiteConfig } from '@/interface';
 
 export const site: SiteConfig = {
-  name: 'Kairo',
-  legalName: 'Kairo Labs, Inc.',
-  url: 'https://kairo-astro.vercel.app',
-  title: 'Kairo - Know the moment before it passes',
+  name: 'ZiaFlow',
+  legalName: 'ZiaFlow, LLC',
+  url: 'https://ziaflow.com',
+  title: 'ZiaFlow — Your Partner in Digital Transformation',
   description:
-    'Kairo reads your metrics, tickets and calls, then tells your team what changed, why it matters and who should act.',
-  email: 'hello@kairo.app',
-  careersEmail: 'careers@kairo.app',
-  accent: '#ff5b1f',
+    'AI-driven SEO, custom software and conversion optimization for Arizona businesses. Call (602) 834-4239 to build a faster path to growth.',
+  email: 'info@ziaflow.com',
+  careersEmail: 'info@ziaflow.com',
+  accent: '#a22a36',
   cta: {
-    primary: { label: 'Start free', href: '/pricing#sales' },
-    secondary: { label: 'Book a demo', href: '/pricing?intent=demo#sales' },
+    primary: { label: 'Book consultation', href: '/booking' },
+    secondary: { label: 'Call (602) 834-4239', href: 'tel:+16028344239' },
   },
   socials: [
-    { label: 'X', href: 'https://x.com', icon: 'x' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com', icon: 'linkedin' },
-    { label: 'GitHub', href: 'https://github.com', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/ziaflow/', icon: 'linkedin' },
+    { label: 'GitHub', href: 'https://github.com/ziaflow', icon: 'github' },
   ],
 };

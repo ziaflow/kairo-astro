@@ -28,7 +28,8 @@ const { story, next } = Astro.props;
 <Layout
   title={pageTitle(`${story.data.client} ${storyPage.metaSuffix}`)}
   description={story.data.summary}
-  image={`/images/og/customers-${story.id}.jpg`}>
+  image={`/images/og/customers-${story.id}.jpg`}
+  noindex>
   <StoryHero story={story} />
   <StoryResults story={story} />
   <StoryBody story={story} />

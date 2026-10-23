@@ -5,7 +5,7 @@ import Layout from '@/layouts/layout.astro';
 import { pageTitle } from '@/utils/generate-meta-data';
 ---
 
-<Layout title={pageTitle(page.meta.title)} description={page.meta.description}>
+<Layout title={pageTitle(page.meta.title)} description={page.meta.description} noindex>
   <section class="relative isolate min-h-[100dvh] overflow-hidden" data-hero aria-labelledby="missing-title">
     <canvas class="absolute inset-0 -z-10 size-full" data-signal-field aria-hidden="true"></canvas>
     <div

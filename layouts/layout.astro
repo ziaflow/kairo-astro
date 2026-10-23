@@ -17,11 +17,25 @@ interface Props {
   description?: string;
   image?: string;
   preloader?: boolean;
+  noindex?: boolean;
 }
 
-const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION, image, preloader = false } = Astro.props;
+const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION, image, preloader = false, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
+const customerIoSiteId = import.meta.env.PUBLIC_CUSTOMER_IO_SITE_ID;
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  email: site.email,
+  telephone: '+1-602-834-4239',
+  address: { '@type': 'PostalAddress', addressLocality: 'Phoenix', addressRegion: 'AZ', addressCountry: 'US' },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  sameAs: site.socials.map(({ href }) => href),
+};
 ---
 
 <!doctype html>
@@ -31,6 +45,8 @@ const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow'} />
+    <meta name="google-site-verification" content="orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M" />
     <meta name="theme-color" content="#0b0c0b" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -47,6 +63,7 @@ const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="generator" content={Astro.generator} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
     <style is:inline set:html={accentVars}></style>
     <Font cssVariable="--font-display-face" preload />
     <Font cssVariable="--font-body-face" preload />
@@ -123,6 +140,31 @@ const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
       </main>
     </div>
     <Footer />
+    {
+      customerIoSiteId && (
+        <script is:inline define:vars={{ customerIoSiteId }}>
+          var _cio = window._cio = window._cio || [];
+          (function () {
+            var factory = function (method) {
+              return function () {
+                _cio.push([method].concat(Array.prototype.slice.call(arguments)));
+              };
+            };
+            ['load', 'identify', 'sidentify', 'track', 'page', 'on', 'off'].forEach(function (method) {
+              _cio[method] = factory(method);
+            });
+            var tracker = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            tracker.async = true;
+            tracker.id = 'cio-tracker';
+            tracker.setAttribute('data-site-id', customerIoSiteId);
+            tracker.setAttribute('data-use-array-params', 'true');
+            tracker.src = 'https://assets.customer.io/assets/track.js';
+            firstScript.parentNode.insertBefore(tracker, firstScript);
+          })();
+        </script>
+      )
+    }
     <script>
       import '@/components/animation/main';
     </script>
