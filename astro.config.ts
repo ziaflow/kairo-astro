@@ -10,16 +10,16 @@ export default defineConfig({
   prefetch: { prefetchAll: true, defaultStrategy: 'hover' },
   fonts: [
     {
-      provider: fontProviders.fontshare(),
-      name: 'Cabinet Grotesk',
+      provider: fontProviders.google(),
+      name: 'Inter',
       cssVariable: '--font-display-face',
       weights: [500, 700, 800],
       styles: ['normal'],
       fallbacks: ['sans-serif'],
     },
     {
-      provider: fontProviders.fontshare(),
-      name: 'General Sans',
+      provider: fontProviders.google(),
+      name: 'Inter',
       cssVariable: '--font-body-face',
       weights: [400, 500, 600],
       styles: ['normal'],

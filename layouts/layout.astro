@@ -6,7 +6,6 @@ import Loader from '@/components/shared/layout/loader.astro';
 import Menu from '@/components/shared/layout/menu.astro';
 import Navbar from '@/components/shared/layout/navbar.astro';
 import Transition from '@/components/shared/layout/transition.astro';
-import ViewChip from '@/components/shared/layout/view-chip.astro';
 import { site } from '@/data/site';
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME } from '@/utils/generate-meta-data';
 
@@ -31,7 +30,7 @@ const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0b0c0b" />
+    <meta name="theme-color" content="#1a1a1a" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
@@ -46,6 +45,7 @@ const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="generator" content={Astro.generator} />
     <style is:inline set:html={accentVars}></style>
     <Font cssVariable="--font-display-face" preload />
@@ -116,7 +116,7 @@ const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
     <Transition />
     <Navbar />
     <Menu />
-    <ViewChip />
+
     <div class="relative z-10 bg-ink" data-page>
       <main id="main">
         <slot />

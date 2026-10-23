@@ -1,24 +1,118 @@
 ---
-import Capabilities from '@/components/home/capabilities.astro';
-import Hero from '@/components/home/hero.astro';
-import HowItWorks from '@/components/home/how-it-works.astro';
-import Logos from '@/components/home/logos.astro';
-import Manifesto from '@/components/home/manifesto.astro';
-import ProductReveal from '@/components/home/product-reveal.astro';
-import Proof from '@/components/home/proof.astro';
-import Stories from '@/components/home/stories.astro';
-import Cta from '@/components/shared/cta.astro';
 import Layout from '@/layouts/layout.astro';
+import Button from '@/components/shared/ui/button.astro';
+import { site } from '@/data/site';
+const deliverables = [
+  ['01', 'Find the gaps', 'Map agreed inquiry sources from first contact through follow-up and final status.'],
+  ['02', 'Repair capture', 'Connect the agreed forms, calls and lead sources to a defined workflow.'],
+  ['03', 'Give every lead an owner', 'Define who follows up, the next action and when a handoff needs attention.'],
+  ['04', 'Build follow-up', 'Set up acknowledgement, internal alerts and an agreed short nurture sequence.'],
+  [
+    '05',
+    'Make progress visible',
+    'Establish source, response and booking or other outcome tracking where your systems allow.',
+  ],
+  ['06', 'Leave a working process', 'Document staff responsibilities and validate the workflow during stabilization.'],
+];
+const faqs = [
+  [
+    'Who is the Sprint for?',
+    'Service businesses that receive inquiries but need a clearer, more reliable capture and follow-up process. We review your systems and access before agreeing scope.',
+  ],
+  [
+    'What does a successful implementation mean?',
+    'For every agreed source, each accepted inquiry is recorded, assigned an owner, given a next action and tracked to a known status. Acknowledgement and human response are measured separately.',
+  ],
+  [
+    'Does this guarantee more leads or booked jobs?',
+    'No. The deliverable is an implemented and tested operating process. A booked job requires booking evidence; awaiting response is also a valid recorded status.',
+  ],
+  [
+    'What is included in the price and timeline?',
+    'Sources, integrations, channels, response coverage, revisions, stabilization and software costs are agreed before work starts. Price and duration follow that scope.',
+  ],
+];
 ---
 
-<Layout preloader>
-  <Hero />
-  <Logos />
-  <Manifesto />
-  <ProductReveal />
-  <Capabilities />
-  <HowItWorks />
-  <Stories />
-  <Proof />
-  <Cta />
+<Layout>
+  <section class="shell pt-40 pb-24 md:pt-52 md:pb-32">
+    <p class="mb-8 font-mono text-label uppercase tracking-widest text-mute">Lead Capture & Follow-Up Sprint</p>
+    <h1 class="max-w-[15ch] font-display text-display font-bold">
+      Close the gap between <span class="underline decoration-signal underline-offset-8">inquiry</span> and next action.
+    </h1>
+    <div class="mt-12 grid gap-10 md:grid-cols-2 md:items-end">
+      <p class="max-w-xl text-lead text-mute">
+        Find where inquiries get lost. Connect the systems and people responsible for following up. Leave with a
+        measurable, documented process.
+      </p>
+      <div class="flex flex-wrap gap-4 md:justify-end">
+        <Button label={site.cta.primary.label} href={site.cta.primary.href} />
+        <Button label="See what is included" href="#sprint" variant="outline" />
+      </div>
+    </div>
+    <div
+      class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4"
+      aria-label="The inquiry workflow">
+      {['Inquiry recorded', 'Owner assigned', 'Next action defined', 'Status tracked'].map((step, i) => (
+        <div class="bg-ink-2 p-6">
+          <span class="font-mono text-sm text-mute">0{i + 1}</span>
+          <p class="mt-6 text-lg">{step}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section id="sprint" class="shell border-t border-line py-24">
+    <p class="font-mono text-label uppercase text-mute">A defined implementation</p>
+    <h2 class="mt-6 max-w-[19ch] font-display text-title font-bold">Make follow-up part of the system.</h2>
+    <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      {deliverables.map(([n, title, body]) => (
+        <article class="rounded-2xl border border-line bg-ink-2 p-8">
+          <span class="font-mono text-sm text-mute">{n}</span>
+          <h3 class="mt-10 text-subtitle font-semibold">{title}</h3>
+          <p class="mt-5 leading-relaxed text-mute">{body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section id="process" class="shell border-t border-line py-24">
+    <p class="font-mono text-label uppercase text-mute">How we work</p>
+    <h2 class="mt-6 font-display text-title font-bold">Agree. Build. Prove.</h2>
+    <div class="mt-14 grid gap-12 md:grid-cols-3">
+      {[
+        [
+          'Agree the boundaries',
+          'Confirm inquiry sources, access, ownership, channels and acceptance checks before implementation.',
+        ],
+        [
+          'Connect the workflow',
+          'Repair capture and define acknowledgements, follow-up, escalation and staff responsibilities.',
+        ],
+        [
+          'Test the handoffs',
+          'Validate successful inquiries, duplicates, provider failures and nonresponse. Document the process before acceptance.',
+        ],
+      ].map(([title, body]) => (
+        <article>
+          <h3 class="text-subtitle font-semibold">{title}</h3>
+          <p class="mt-5 leading-relaxed text-mute">{body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+  <section id="faq" class="shell border-t border-line py-24">
+    <h2 class="font-display text-title font-bold">Before we begin.</h2>
+    <div class="mt-12 max-w-4xl">
+      {faqs.map(([q, a]) => (
+        <details class="border-b border-line py-6">
+          <summary class="cursor-pointer text-xl font-medium">{q}</summary>
+          <p class="mt-5 max-w-3xl leading-relaxed text-mute">{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+  <section class="shell border-t border-line py-24 md:py-32">
+    <p class="font-mono text-label uppercase text-mute">Start with your current workflow</p>
+    <h2 class="mt-6 mb-10 max-w-[18ch] font-display text-title font-bold">Where does your next inquiry go?</h2>
+    <Button label={site.cta.primary.label} href={site.cta.primary.href} />
+  </section>
 </Layout>
