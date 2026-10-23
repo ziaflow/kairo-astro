@@ -1,118 +1,233 @@
 ---
-import Layout from '@/layouts/layout.astro';
-import Button from '@/components/shared/ui/button.astro';
-import { site } from '@/data/site';
-const deliverables = [
-  ['01', 'Find the gaps', 'Map agreed inquiry sources from first contact through follow-up and final status.'],
-  ['02', 'Repair capture', 'Connect the agreed forms, calls and lead sources to a defined workflow.'],
-  ['03', 'Give every lead an owner', 'Define who follows up, the next action and when a handoff needs attention.'],
-  ['04', 'Build follow-up', 'Set up acknowledgement, internal alerts and an agreed short nurture sequence.'],
-  [
-    '05',
-    'Make progress visible',
-    'Establish source, response and booking or other outcome tracking where your systems allow.',
-  ],
-  ['06', 'Leave a working process', 'Document staff responsibilities and validate the workflow during stabilization.'],
-];
-const faqs = [
-  [
-    'Who is the Sprint for?',
-    'Service businesses that receive inquiries but need a clearer, more reliable capture and follow-up process. We review your systems and access before agreeing scope.',
-  ],
-  [
-    'What does a successful implementation mean?',
-    'For every agreed source, each accepted inquiry is recorded, assigned an owner, given a next action and tracked to a known status. Acknowledgement and human response are measured separately.',
-  ],
-  [
-    'Does this guarantee more leads or booked jobs?',
-    'No. The deliverable is an implemented and tested operating process. A booked job requires booking evidence; awaiting response is also a valid recorded status.',
-  ],
-  [
-    'What is included in the price and timeline?',
-    'Sources, integrations, channels, response coverage, revisions, stabilization and software costs are agreed before work starts. Price and duration follow that scope.',
-  ],
-];
+import Layout from '@/components/migration/Page.astro';
+import StructuralGridHero from '@/components/migration/StructuralGridHero.astro';
+import ZoltServiceMatrix from '@/components/migration/ZoltServiceMatrix.astro';
+import Features3 from '@/components/migration/Features3.astro';
+import FAQs from '@/components/migration/FAQs.astro';
+import BlogLatestPosts from '@/components/migration/BlogLatestPosts.astro';
+import Stats from '@/components/migration/Stats.astro';
+import CallToAction from '@/components/migration/CallToAction.astro';
+import Testimonials from '@/components/migration/Testimonials.astro';
+
+import LocalBusinessSchema from '@/components/migration/LocalBusinessSchema.astro';
+import Content from '@/components/migration/Content.astro';
+
+const metadata = {
+  title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
+  description:
+    'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a free consultation with our Phoenix team.',
+  ignoreTitleTemplate: true,
+  openGraph: {
+    url: 'https://ziaflow.com/',
+    siteName: 'ZiaFlow',
+    type: 'website',
+    locale: 'en',
+    title: 'ZiaFlow | Custom Software & AI Automation Agents',
+    description:
+      'Deploy autonomous AI agents, HIPAA-compliant voice assistants, and custom software. Call (602) 834-4239 to engineer your growth solutions with ZiaFlow.',
+    images: [
+      {
+        url: 'https://ziaflow.com/logo.png',
+        width: 1200,
+        height: 628,
+        alt: 'ZiaFlow Digital Growth Partner',
+      },
+    ],
+  },
+  extend: {
+    meta: [
+      {
+        property: 'og:logo',
+        content: 'https://ziaflow.com/logo.png',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:url',
+        content: 'https://ziaflow.com/',
+      },
+      {
+        name: 'twitter:title',
+        content: 'ZiaFlow | Custom Software & AI Automation Agents',
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://ziaflow.com/logo.png',
+      },
+    ],
+  },
+};
 ---
 
-<Layout>
-  <section class="shell pt-40 pb-24 md:pt-52 md:pb-32">
-    <p class="mb-8 font-mono text-label uppercase tracking-widest text-mute">Lead Capture & Follow-Up Sprint</p>
-    <h1 class="max-w-[15ch] font-display text-display font-bold">
-      Close the gap between <span class="underline decoration-signal underline-offset-8">inquiry</span> and next action.
-    </h1>
-    <div class="mt-12 grid gap-10 md:grid-cols-2 md:items-end">
-      <p class="max-w-xl text-lead text-mute">
-        Find where inquiries get lost. Connect the systems and people responsible for following up. Leave with a
-        measurable, documented process.
-      </p>
-      <div class="flex flex-wrap gap-4 md:justify-end">
-        <Button label={site.cta.primary.label} href={site.cta.primary.href} />
-        <Button label="See what is included" href="#sprint" variant="outline" />
-      </div>
-    </div>
-    <div
-      class="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4"
-      aria-label="The inquiry workflow">
-      {['Inquiry recorded', 'Owner assigned', 'Next action defined', 'Status tracked'].map((step, i) => (
-        <div class="bg-ink-2 p-6">
-          <span class="font-mono text-sm text-mute">0{i + 1}</span>
-          <p class="mt-6 text-lg">{step}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-  <section id="sprint" class="shell border-t border-line py-24">
-    <p class="font-mono text-label uppercase text-mute">A defined implementation</p>
-    <h2 class="mt-6 max-w-[19ch] font-display text-title font-bold">Make follow-up part of the system.</h2>
-    <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {deliverables.map(([n, title, body]) => (
-        <article class="rounded-2xl border border-line bg-ink-2 p-8">
-          <span class="font-mono text-sm text-mute">{n}</span>
-          <h3 class="mt-10 text-subtitle font-semibold">{title}</h3>
-          <p class="mt-5 leading-relaxed text-mute">{body}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-  <section id="process" class="shell border-t border-line py-24">
-    <p class="font-mono text-label uppercase text-mute">How we work</p>
-    <h2 class="mt-6 font-display text-title font-bold">Agree. Build. Prove.</h2>
-    <div class="mt-14 grid gap-12 md:grid-cols-3">
-      {[
-        [
-          'Agree the boundaries',
-          'Confirm inquiry sources, access, ownership, channels and acceptance checks before implementation.',
-        ],
-        [
-          'Connect the workflow',
-          'Repair capture and define acknowledgements, follow-up, escalation and staff responsibilities.',
-        ],
-        [
-          'Test the handoffs',
-          'Validate successful inquiries, duplicates, provider failures and nonresponse. Document the process before acceptance.',
-        ],
-      ].map(([title, body]) => (
-        <article>
-          <h3 class="text-subtitle font-semibold">{title}</h3>
-          <p class="mt-5 leading-relaxed text-mute">{body}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-  <section id="faq" class="shell border-t border-line py-24">
-    <h2 class="font-display text-title font-bold">Before we begin.</h2>
-    <div class="mt-12 max-w-4xl">
-      {faqs.map(([q, a]) => (
-        <details class="border-b border-line py-6">
-          <summary class="cursor-pointer text-xl font-medium">{q}</summary>
-          <p class="mt-5 max-w-3xl leading-relaxed text-mute">{a}</p>
-        </details>
-      ))}
-    </div>
-  </section>
-  <section class="shell border-t border-line py-24 md:py-32">
-    <p class="font-mono text-label uppercase text-mute">Start with your current workflow</p>
-    <h2 class="mt-6 mb-10 max-w-[18ch] font-display text-title font-bold">Where does your next inquiry go?</h2>
-    <Button label={site.cta.primary.label} href={site.cta.primary.href} />
-  </section>
+<Layout metadata={metadata}>
+  <LocalBusinessSchema />
+
+  <StructuralGridHero />
+
+  <ZoltServiceMatrix />
+
+  <Stats
+    stats={[
+      { title: 'Arizona Clients', amount: '50+' },
+      { title: 'Avg. Lead Growth', amount: '150%' },
+      { title: 'Google Rating', amount: '5.0★' },
+      { title: 'Years in Phoenix', amount: '4+' },
+    ]}
+    tagline="Trusted by Phoenix-Area Service Businesses"
+  />
+
+  <Content
+    title="Data-Driven Content Strategy"
+    subtitle="Proprietary AI that analyzes competitor data to write grounded, SEO-optimized content."
+    items={[
+      {
+        title: 'Competitor Analysis',
+        description:
+          'Our AI scans the top-ranking competitors in your niche to identify content gaps and opportunities.',
+      },
+      {
+        title: 'Optimized Workflow',
+        description: 'Generate high-quality, undetectable AI content that ranks on Google and engages real humans.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Data Driven Dashboard',
+    }}>
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-primary">Intelligence</span> Dashboard
+      </h3>
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    title="Trusted by Tech Leaders"
+    tagline="Success Stories"
+    testimonials={[
+      {
+        testimonial:
+          'ZiaFlow has transformed our business with their automation solutions. Their tailored approach and expertise have streamlined our processes, saving us time and boosting our productivity. Highly recommend!',
+        name: 'K. B.',
+        job: 'COO',
+      },
+      {
+        testimonial:
+          'Ziaflow is a top-notch company with great service, expert knowledge, and competitive prices. Highly recommended!',
+        name: 'J. M.',
+        job: 'Investor',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Ready to engineer your growth?"
+    subtitle="Book a transparent technical consultation or call us immediately. No sales pressure, just a roadmap to automation."
+    actions={[
+      {
+        variant: 'primary',
+        text: '📞 (602) 834-4239',
+        href: 'tel:+16028344239',
+        classes: {
+          btn: 'bg-emerald-500 hover:bg-emerald-600 border-emerald-500 hover:border-emerald-600 font-bold text-white shadow-lg shadow-emerald-500/25',
+        },
+      },
+      {
+        variant: 'primary',
+        text: 'Book Tech Consult',
+        href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',
+        icon: 'tabler:calendar',
+      },
+      {
+        variant: 'secondary',
+        text: 'Contact Us',
+        href: 'mailto:info@ziaflow.com',
+      },
+    ]}
+  />
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Answers to common questions about our services and process."
+    tagline="FAQ"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What makes ZiaFlow different from other agencies?',
+        description:
+          "We specialize in the home services, medical, and ecommerce sectors, understanding their unique challenges. Our in-house team includes software developers and AI experts, allowing us to build custom solutions that other agencies can't.",
+      },
+      {
+        title: 'How do you measure success?',
+        description:
+          'We focus on what matters: leads and revenue. Our transparent dashboards track calls, appointments, and sales, providing clear insight into your ROI.',
+      },
+      {
+        title: 'Do you work with businesses outside of Arizona?',
+        description:
+          'Yes. While we proudly serve businesses in Phoenix, Scottsdale, Tucson, and Glendale, we also partner with companies nationwide to provide digital marketing, custom software, and cloud solutions.',
+      },
+      {
+        title: 'How quickly will I see results?',
+        description:
+          'PPC campaigns can generate leads within days, while SEO typically shows significant improvement in 3-6 months. We provide realistic timelines for all projects upfront.',
+      },
+      {
+        title: 'What is included in your marketing automation services?',
+        description:
+          'Our AI-powered automation can handle lead nurturing, appointment scheduling, customer follow-ups, review requests, and service inquiries. We customize every system to fit your specific business processes.',
+      },
+    ]}
+  />
+
+  <Features3
+    title="Contact ZiaFlow"
+    subtitle="Choose the method that works best for you"
+    columns={4}
+    items={[
+      {
+        title: 'Call Us Now',
+        icon: 'tabler:phone-call',
+        callToAction: {
+          text: '📞 (602) 834-4239',
+          href: 'tel:+16028344239',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          text: 'info@ziaflow.com',
+          href: 'mailto:info@ziaflow.com',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Visit',
+        icon: 'tabler:map-pin',
+        callToAction: {
+          text: 'Phoenix, AZ 85023',
+          href: 'https://maps.google.com?q=Phoenix+AZ+85023',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Schedule',
+        icon: 'tabler:calendar',
+        callToAction: {
+          text: 'Book Meeting',
+          href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',
+          variant: 'link',
+        },
+      },
+    ]}
+  />
+
+  <BlogLatestPosts
+    title="Digital Marketing Insights"
+    information="Local SEO, automation playbooks, CRO, and case studies for Arizona businesses."
+  />
 </Layout>

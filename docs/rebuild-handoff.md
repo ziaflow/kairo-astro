@@ -1,8 +1,16 @@
+# Current direction — visual migration, preserve existing content
+
+Jeremy clarified that the new site must keep the existing pages, copy and SEO. This supersedes the Sprint-first homepage rewrite below. The homepage now uses existing astro-wind-zf-test main copy and its hero/service-matrix content, with Kairo styling. Keep existing homepage title, description, canonical host, distinct OpenGraph title/description and business schema. No new offer/positioning rewrite is authorized by this visual migration.
+
+The partner strip and AI Voice Automation standalone section remain removed per earlier explicit instructions. Previously published claims are preserved as source copy in this draft, not newly verified. Do not silently rewrite them; any later editorial change requires a separate review. Signed/expiring social-image URLs were replaced with the existing stable https://ziaflow.com/logo.png destination; social image verification remains a release check. The broken #form CTA now uses the existing contact destination; there is no simulated submission.
+
+The fork is still a preview foundation, not a complete website replacement. Service/article/about/contact/terms/privacy routes must be migrated with exact text, metadata, structured data and URL parity before a domain swap. Existing production URLs remain working destinations during preparation. Keep Customer.io for forms and preserve Supabase persistence, analytics and collectors. Noindex stays on the preview only and must be explicitly removed at approved production cutover.
+
 # ZiaFlow Kairo replacement — preview foundation
 
 Source: ziaflow/kairo-astro. Brand source: ziaflow_brand_book_by_pomelli.pdf, pages 3–6. Inter; garnet #A22A36 / #7C1E29; white #FFFFFF; obsidian #1A1A1A. Teal is intentionally omitted per Jeremy’s explicit direction. Neutral elevated surfaces support the dark theme. The text wordmark is provisional; do not invent a replacement logo.
 
-Homepage replaces fictional SaaS metrics/testimonials with the Lead Capture & Follow-Up Sprint. Header and footer link to the existing production contact path until the replacement intake passes verification. No simulated form is exposed on the new homepage. Legacy template routes remain unapproved demo material; the whole build is noindex/nofollow during preview.
+Initial slice previously introduced Sprint copy; superseded by the current preservation direction. Header and footer link to the existing production contact path until the replacement intake passes verification. No simulated form is exposed on the new homepage. Legacy template routes remain unapproved demo material; the whole build is noindex/nofollow during preview.
 
 ## Before swapping the theme
 

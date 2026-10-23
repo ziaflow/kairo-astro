@@ -4,15 +4,18 @@ export const site: SiteConfig = {
   name: 'ZiaFlow',
   legalName: 'ZiaFlow',
   url: 'https://ziaflow.com',
-  title: 'ZiaFlow | Lead Capture & Follow-Up Sprint',
+  title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
   description:
-    'Connect your inquiry sources, follow-up responsibilities and next actions with a measurable, documented process.',
+    'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a free consultation with our Phoenix team.',
   email: 'jeremy@ziaflow.com',
   careersEmail: 'jeremy@ziaflow.com',
   accent: '#A22A36',
   cta: {
-    primary: { label: 'Review your lead flow', href: 'https://ziaflow.com/contact' },
-    secondary: { label: 'Explore the Sprint', href: '/#sprint' },
+    primary: { label: 'Contact Us', href: 'https://ziaflow.com/contact' },
+    secondary: {
+      label: 'Book Tech Consult',
+      href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',
+    },
   },
   socials: [],
 };

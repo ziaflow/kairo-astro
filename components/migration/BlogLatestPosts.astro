@@ -1,0 +1,24 @@
+---
+import posts from '@/data/legacy-posts.json';
+const { title, information } = Astro.props;
+---
+
+<section class="shell">
+  <header class="section-head">
+    <h2>{title}</h2>
+    <p>{information}</p>
+    <a class="text-link" href="https://ziaflow.com/blog">
+      View all posts »
+    </a>
+  </header>
+  <div class="cards">
+    {posts.slice(0, 4).map((p) => (
+      <article class="card">
+        <h3>
+          <a href={p.href}>{p.title}</a>
+        </h3>
+        <p>{p.description}</p>
+      </article>
+    ))}
+  </div>
+</section>

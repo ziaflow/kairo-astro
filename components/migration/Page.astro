@@ -1,0 +1,100 @@
+---
+import Layout from '@/layouts/layout.astro';
+const { metadata } = Astro.props;
+---
+
+<Layout
+  title={metadata.title}
+  description={metadata.description}
+  image="https://ziaflow.com/logo.png"
+  openGraph={metadata.openGraph}>
+  <div class="legacy-home">
+    <slot />
+  </div>
+</Layout>
+<style is:global>
+  .legacy-home section {
+    padding-block: clamp(4rem, 8vw, 7rem);
+    border-bottom: 1px solid var(--color-line);
+  }
+  .legacy-home .section-head {
+    max-width: 52rem;
+    margin-bottom: 3rem;
+  }
+  .legacy-home h1 {
+    font-size: clamp(2.75rem, 6vw, 6.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    max-width: 17ch;
+  }
+  .legacy-home h2 {
+    font-size: clamp(2rem, 4.4vw, 4.5rem);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+  }
+  .legacy-home h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .legacy-home p {
+    color: var(--color-mute);
+    line-height: 1.7;
+    margin-top: 1rem;
+  }
+  .legacy-home .eyebrow {
+    font: 0.75rem var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .legacy-home .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .legacy-home .card {
+    padding: 2rem;
+    border: 1px solid var(--color-line);
+    border-radius: 1.25rem;
+    background: var(--color-ink-2);
+  }
+  .legacy-home .card a,
+  .legacy-home .text-link {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+    margin-top: 1.5rem;
+  }
+  .legacy-home .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .legacy-home li {
+    color: var(--color-mute);
+    margin-top: 0.6rem;
+  }
+  .legacy-home ul {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    list-style: disc;
+  }
+  .legacy-home details {
+    border-bottom: 1px solid var(--color-line);
+    padding: 1.5rem 0;
+  }
+  .legacy-home summary {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .legacy-home .hero {
+    padding-top: 10rem;
+  }
+  .legacy-home .hero h1 span {
+    text-decoration: underline;
+    text-decoration-color: var(--color-signal);
+    text-underline-offset: 0.12em;
+  }
+</style>
