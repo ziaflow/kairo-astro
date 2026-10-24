@@ -1,9 +1,11 @@
+import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
 import { site } from './data/site';
 
 export default defineConfig({
   srcDir: './',
+  adapter: vercel(),
   site: site.url,
   vite: { plugins: [tailwindcss()], optimizeDeps: { include: ['number-flow'] } },
   image: { responsiveStyles: false },

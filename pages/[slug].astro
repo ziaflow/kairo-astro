@@ -1,0 +1,44 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Button from '@/components/shared/ui/button.astro';
+import Layout from '@/layouts/layout.astro';
+import { pageTitle } from '@/utils/generate-meta-data';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={pageTitle(post.data.title)} description={post.data.excerpt}>
+  <article>
+    <header class="shell pt-36 pb-16 md:pt-44 md:pb-24">
+      <a href="/blog" class="font-mono text-label text-signal uppercase">← Blog</a>
+      <p class="mt-12 font-mono text-label text-mute uppercase">{post.data.category ?? 'ZiaFlow insights'}</p>
+      <h1 class="mt-5 max-w-[15ch] font-display text-title font-extrabold text-bone" data-split>{post.data.title}</h1>
+      <p class="mt-8 max-w-[58ch] text-lead text-mute">{post.data.excerpt}</p>
+      <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-dim">
+        <time datetime={post.data.publishDate.toISOString()}>
+          {post.data.publishDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+        </time>
+        <span aria-hidden="true">·</span>
+        <span>{post.data.author ?? 'ZiaFlow Team'}</span>
+      </div>
+    </header>
+    <div class="border-t border-line">
+      <div class="shell py-20 md:py-28">
+        <div class="prose-kairo mx-auto" data-reveal><Content /></div>
+        <div class="mx-auto mt-16 max-w-3xl border-t border-line pt-10">
+          <Button label="Discuss your project" href="/contact" />
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

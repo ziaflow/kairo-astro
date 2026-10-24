@@ -1,0 +1,36 @@
+---
+import Button from '@/components/shared/ui/button.astro';
+import PageHero from '@/components/shared/page-hero.astro';
+import { bookingUrl } from '@/data/services';
+import Layout from '@/layouts/layout.astro';
+import { pageTitle } from '@/utils/generate-meta-data';
+---
+
+<Layout
+  title={pageTitle('Book a Strategy Session')}
+  description="Schedule a free strategy session with ZiaFlow and reserve your time through Microsoft Bookings.">
+  <PageHero
+    lines={['Schedule your', 'ZiaFlow call.']}
+    accent={1}
+    intro="Choose a time that works for you. We will use the call to understand your goals, bottlenecks, and the shortest useful next step.">
+    <div class="flex flex-wrap gap-3 md:col-span-5 md:col-start-2" data-intro>
+      <Button label="Open booking calendar" href={bookingUrl} />
+      <Button label="Email info@ziaflow.com" href="mailto:info@ziaflow.com" variant="outline" />
+    </div>
+  </PageHero>
+  <section class="border-t border-line">
+    <div class="shell grid gap-10 py-24 md:grid-cols-3 md:py-32">
+      {[
+        ['01', 'Discovery', 'We start with your business, the current system, and the result you need.'],
+        ['02', 'Roadmap', 'You leave with a clear recommendation, whether or not we work together.'],
+        ['03', 'No pressure', 'A practical technical conversation, not a scripted sales call.'],
+      ].map(([number, title, body]) => (
+        <article class="border-t border-line pt-6" data-reveal>
+          <p class="font-mono text-label text-signal">{number}</p>
+          <h2 class="mt-8 font-display text-3xl font-bold text-bone">{title}</h2>
+          <p class="mt-4 text-mute">{body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

@@ -1,8 +1,8 @@
 import { site } from '@/data/site';
 
 export const hero = {
-  lines: [{ text: 'Know the moment' }, { text: 'before it', accent: 'passes.' }],
-  intro: `${site.name} reads your metrics, tickets and calls, then tells the right person what changed and why.`,
+  lines: [{ text: 'Engineer growth.' }, { text: 'Remove the', accent: 'friction.' }],
+  intro: `${site.name} builds high-converting websites, automation, search strategy, and custom software for businesses ready to move faster.`,
 };
 
 export const logosSection = {
@@ -12,13 +12,13 @@ export const logosSection = {
 export const manifesto = {
   eyebrow: `Why ${site.name}`,
   parts: [
-    { text: 'Your company already knows what is about to go wrong.' },
+    { text: 'Growth stalls when your website, marketing, and operations work as separate systems.' },
     { image: '/images/manifesto-face.jpg' },
-    { text: 'It is buried in a dashboard nobody opened, a ticket marked low,' },
+    { text: 'We connect the pieces, remove manual bottlenecks,' },
     { image: '/images/manifesto-city.jpg' },
-    { text: `a call that ended early. ${site.name} listens to all of it` },
+    { text: 'and build a clear path from attention to action.' },
     { image: '/images/manifesto-hand.jpg' },
-    { text: 'and tells you while there is still time to act.' },
+    { text: 'No disconnected tactics. One measurable growth system.' },
   ] as ({ text: string } | { image: string })[],
   hint: 'Drag across the line, or tap it',
 };
@@ -68,39 +68,39 @@ export const productStory = {
 };
 
 export const capabilities = {
-  title: 'Everything it takes to act first.',
+  title: 'Everything your growth system needs.',
   detect: {
-    title: 'Spots the shift',
-    body: `Every metric gets its own normal range. ${site.name} flags what breaks it, with the likely cause.`,
-    label: 'Checkout errors 3x',
+    title: 'Measures what converts',
+    body: 'Track booked calls, qualified forms, sales, and revenue—not vanity metrics or disconnected traffic reports.',
+    label: 'Qualified leads rising',
   },
   connect: {
-    title: 'Plugs into your stack',
-    body: 'Billing, CRM, support, product analytics and your warehouse. Read-only, connected in minutes.',
+    title: 'Connects your stack',
+    body: 'Bring websites, CRM, advertising, analytics, email, and cloud systems into one reliable operating flow.',
     image: '/images/capability-lights.jpg',
   },
   rank: {
-    title: 'Ranks by impact',
-    body: 'Changes are sorted by what they cost, so the biggest one is always on top.',
+    title: 'Prioritizes impact',
+    body: 'Focus the roadmap on the work most likely to improve revenue, efficiency, or customer experience.',
     items: [
-      { title: 'Enterprise renewals slipping', value: '$48k at risk' },
-      { title: 'Checkout errors in Germany', value: '212 orders' },
-      { title: 'Onboarding drop-off on step 3', value: '-9% this week' },
+      { title: 'High-intent search visibility', value: 'SEO' },
+      { title: 'Lead response and follow-up', value: 'Automation' },
+      { title: 'Booking and checkout friction', value: 'CRO' },
     ],
   },
   brief: {
-    title: 'Writes the brief',
-    body: 'One short message with the cause, the size and an owner. Sent where that person works.',
-    text: 'Checkout errors in Germany tripled after Tuesday’s release. 212 orders failed. Likely cause: the new address check. Suggested owner: Payments.',
+    title: 'Makes the next move clear',
+    body: 'You get a practical roadmap with the scope, priorities, measurement plan, and owner for each next step.',
+    text: 'Priority: shorten lead response time. Connect the website form to the CRM, send an instant confirmation, and route qualified inquiries to the right owner.',
   },
   privacy: {
-    title: 'Private by default',
-    body: 'SSO, audit logs and field-level redaction. Your data never trains shared models.',
+    title: 'Built for serious operations',
+    body: 'Secure cloud architecture, resilient integrations, accessible interfaces, and data practices designed for long-term ownership.',
   },
 };
 
 export const howItWorks = {
-  title: 'Up and running in an afternoon.',
+  title: 'A direct path from problem to progress.',
   watchHint: 'Drag the line',
 };
 
@@ -115,6 +115,6 @@ export const proofSection = {
 };
 
 export const closingCta = {
-  title: 'Catch the next one before it lands.',
-  body: 'Connect your first source in twenty minutes. Free for small teams, no card needed.',
+  title: 'Ready to engineer your growth?',
+  body: 'Book a transparent technical consultation. No sales pressure—just a practical roadmap for the next useful improvement.',
 };

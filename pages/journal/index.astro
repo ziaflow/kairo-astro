@@ -12,7 +12,7 @@ const featured = posts.find((post) => post.data.featured) ?? posts[0];
 const rest = posts.filter((post) => post.id !== featured.id);
 ---
 
-<Layout title={pageTitle(page.meta.title)} image="/images/og/journal.jpg" description={page.meta.description}>
+<Layout title={pageTitle(page.meta.title)} image="/images/og/journal.jpg" description={page.meta.description} noindex>
   <PageHero lines={page.hero.lines} intro={page.hero.intro} />
   <FeaturedPost post={featured} />
   <PostList posts={rest} />

@@ -1,0 +1,47 @@
+---
+import Button from '@/components/shared/ui/button.astro';
+import PageHero from '@/components/shared/page-hero.astro';
+import { bookingUrl, services } from '@/data/services';
+import Layout from '@/layouts/layout.astro';
+import { pageTitle } from '@/utils/generate-meta-data';
+
+const title = 'Phoenix Home Service Marketing | ZiaFlow';
+const description =
+  'Get more qualified local leads with Google Local Service Ads, optimized Google Business Profiles, review automation, and conversion-focused marketing.';
+---
+
+<Layout title={pageTitle(title)} description={description}>
+  <PageHero
+    lines={['Local growth,', 'engineered.']}
+    accent={1}
+    intro="Get more qualified local leads with LSAs, optimized Google Business Profiles, review automation, and conversion-focused local marketing.">
+    <div class="md:col-span-5 md:col-start-2" data-intro>
+      <p class="font-mono text-label text-signal uppercase">Arizona home service marketing experts</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <Button label="Book consultation" href={bookingUrl} />
+        <Button label="Call (602) 834-4239" href="tel:+16028344239" variant="outline" />
+      </div>
+    </div>
+  </PageHero>
+
+  <section class="border-t border-line" aria-labelledby="services-list">
+    <div class="shell py-24 md:py-32">
+      <h2 id="services-list" class="max-w-[14ch] font-display text-title font-bold text-bone" data-split>
+        Specialized services that move the numbers that matter.
+      </h2>
+      <div class="mt-14 grid border-t border-l border-line md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service, index) => (
+          <a
+            href={`/services/${service.slug}`}
+            class="group min-h-72 border-r border-b border-line p-7 transition-colors hover:bg-ink-2 md:p-9"
+            data-reveal>
+            <p class="font-mono text-label text-dim">{String(index + 1).padStart(2, '0')}</p>
+            <h3 class="mt-10 font-display text-2xl font-bold text-bone group-hover:text-signal">{service.name}</h3>
+            <p class="mt-4 max-w-[38ch] text-mute">{service.meta.description}</p>
+            <span class="mt-8 inline-block text-sm font-medium text-signal">Explore service →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

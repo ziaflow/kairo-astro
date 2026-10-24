@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/layout.astro';
+import { pageTitle } from '@/utils/generate-meta-data';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={pageTitle(frontmatter.title)} description={frontmatter.description}>
+  <article class="shell pt-36 pb-24 md:pt-44 md:pb-32">
+    <header class="max-w-4xl border-b border-line pb-12">
+      <p class="font-mono text-label text-signal uppercase">ZiaFlow legal</p>
+      <h1 class="mt-5 font-display text-title font-bold text-bone">{frontmatter.title}</h1>
+      <p class="mt-6 max-w-[60ch] text-lead text-mute">{frontmatter.description}</p>
+    </header>
+    <div
+      class="legal-copy mt-14 max-w-4xl text-mute [&_a]:text-signal [&_a]:underline [&_a]:underline-offset-4 [&_h2]:mt-14 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-bone [&_h3]:mt-9 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-bone [&_li]:mt-2 [&_ol]:my-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:mt-5 [&_p]:leading-7 [&_strong]:text-bone [&_ul]:my-6 [&_ul]:list-disc [&_ul]:pl-6">
+      <slot />
+    </div>
+  </article>
+</Layout>

@@ -8,7 +8,7 @@ import Layout from '@/layouts/layout.astro';
 import { pageTitle } from '@/utils/generate-meta-data';
 ---
 
-<Layout title={pageTitle(page.meta.title)} image="/images/og/customers.jpg" description={page.meta.description}>
+<Layout title={pageTitle(page.meta.title)} image="/images/og/customers.jpg" description={page.meta.description} noindex>
   <PageHero lines={page.hero.lines} intro={page.hero.intro} />
   <StoryGrid />
   <ResultsBand />

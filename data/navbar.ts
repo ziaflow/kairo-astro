@@ -1,9 +1,19 @@
 import type { NavLink } from '@/interface';
+
 export const navLinks: NavLink[] = [
-  { label: 'Services', href: '/#services' },
-  { label: 'Blog', href: 'https://ziaflow.com/blog' },
-  { label: 'About', href: 'https://ziaflow.com/about' },
-  { label: 'Contact', href: 'https://ziaflow.com/contact' },
+  { label: 'Services', href: '/services' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
+
 export const menuLinks: NavLink[] = [{ label: 'Home', href: '/' }, ...navLinks];
-export const routeLabels: Record<string, string> = { '/': 'Home' };
+
+export const routeLabels: Record<string, string> = {
+  '/': 'Home',
+  '/services': 'Services',
+  '/pricing': 'Pricing',
+  '/blog': 'Blog',
+  '/about': 'About',
+  '/contact': 'Contact',
+};

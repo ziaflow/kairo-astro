@@ -7,8 +7,8 @@ export const site: SiteConfig = {
   title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
   description:
     'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a free consultation with our Phoenix team.',
-  email: 'jeremy@ziaflow.com',
-  careersEmail: 'jeremy@ziaflow.com',
+  email: 'info@ziaflow.com',
+  careersEmail: 'info@ziaflow.com',
   accent: '#A22A36',
   cta: {
     primary: { label: 'Contact Us', href: 'https://ziaflow.com/contact' },
