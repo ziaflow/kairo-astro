@@ -7,9 +7,10 @@ export default function init() {
     const status = $('[data-contact-status]', form);
     if (!submit || !status) return;
 
-    form.addEventListener('submit', (event) => {
+    let submissionId = crypto.randomUUID();
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
+      if (submit.disabled || !form.reportValidity()) return;
 
       const values = Object.fromEntries(new FormData(form).entries());
       if (values.website) return;
@@ -19,7 +20,9 @@ export default function init() {
       status.className = 'mt-5 min-h-6 text-sm text-mute';
       status.textContent = 'Sending...';
 
-      if (!submitLead(values)) {
+      try {
+        await submitLead(values, submissionId);
+      } catch {
         submit.disabled = false;
         submit.removeAttribute('aria-busy');
         status.className = 'mt-5 min-h-6 text-sm text-signal';
@@ -29,9 +32,10 @@ export default function init() {
 
       const firstName = String(values.name).trim().split(/\s+/)[0];
       form.reset();
+      submissionId = crypto.randomUUID();
       submit.removeAttribute('aria-busy');
       status.className = 'mt-5 min-h-6 text-sm text-bone';
-      status.textContent = `Thanks, ${firstName}. Check your inbox for next steps.`;
+      status.textContent = `Thanks, ${firstName}. Your request has been recorded.`;
       window.setTimeout(() => (submit.disabled = false), 1500);
     });
   });

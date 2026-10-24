@@ -2,20 +2,20 @@ import type { SiteConfig } from '@/interface';
 
 export const site: SiteConfig = {
   name: 'ZiaFlow',
-  legalName: 'ZiaFlow, LLC',
+  legalName: 'ZiaFlow',
   url: 'https://ziaflow.com',
-  title: 'ZiaFlow — Your Partner in Digital Transformation',
+  title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
   description:
-    'AI-driven SEO, custom software and conversion optimization for Arizona businesses. Call (602) 834-4239 to build a faster path to growth.',
+    'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a free consultation with our Phoenix team.',
   email: 'info@ziaflow.com',
   careersEmail: 'info@ziaflow.com',
-  accent: '#a22a36',
+  accent: '#A22A36',
   cta: {
-    primary: { label: 'Book consultation', href: '/booking' },
-    secondary: { label: 'Call (602) 834-4239', href: 'tel:+16028344239' },
+    primary: { label: 'Contact Us', href: 'https://ziaflow.com/contact' },
+    secondary: {
+      label: 'Book Tech Consult',
+      href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',
+    },
   },
-  socials: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/ziaflow/', icon: 'linkedin' },
-    { label: 'GitHub', href: 'https://github.com/ziaflow', icon: 'github' },
-  ],
+  socials: [],
 };

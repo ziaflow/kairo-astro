@@ -1,0 +1,28 @@
+# Current direction — visual migration, preserve existing content
+
+Jeremy clarified that the new site must keep the existing pages, copy and SEO. This supersedes the Sprint-first homepage rewrite below. The homepage now uses existing astro-wind-zf-test main copy and its hero/service-matrix content, with Kairo styling. Keep existing homepage title, description, canonical host, distinct OpenGraph title/description and business schema. No new offer/positioning rewrite is authorized by this visual migration.
+
+The partner strip and AI Voice Automation standalone section remain removed per earlier explicit instructions. Previously published claims are preserved as source copy in this draft, not newly verified. Do not silently rewrite them; any later editorial change requires a separate review. Signed/expiring social-image URLs were replaced with the existing stable https://ziaflow.com/logo.png destination; social image verification remains a release check. The broken #form CTA now uses the existing contact destination; there is no simulated submission.
+
+The fork is still a preview foundation, not a complete website replacement. Service/article/about/contact/terms/privacy routes must be migrated with exact text, metadata, structured data and URL parity before a domain swap. Existing production URLs remain working destinations during preparation. Keep Customer.io for forms and preserve Supabase persistence, analytics and collectors. Noindex stays on the preview only and must be explicitly removed at approved production cutover.
+
+# ZiaFlow Kairo replacement — preview foundation
+
+Source: ziaflow/kairo-astro. Brand source: ziaflow_brand_book_by_pomelli.pdf, pages 3–6. Inter; garnet #A22A36 / #7C1E29; white #FFFFFF; obsidian #1A1A1A. Teal is intentionally omitted per Jeremy’s explicit direction. Neutral elevated surfaces support the dark theme. The text wordmark is provisional; do not invent a replacement logo.
+
+Initial slice previously introduced Sprint copy; superseded by the current preservation direction. Header and footer link to the existing production contact path until the replacement intake passes verification. No simulated form is exposed on the new homepage. Legacy template routes remain unapproved demo material; the whole build is noindex/nofollow during preview.
+
+## Before swapping the theme
+
+- Complete live URL and source inventory against astro-wind-zf-test, preserving root article slugs and /blog.
+- Model service audience, problem, deliverables, process, FAQs and working CTA; reconcile Sanity individually. Do not bulk publish drafts.
+- Port contact API with attribution, idempotency, test exclusion and failure handling; verify Supabase + Customer.io acknowledgement and booking/disposition.
+- Retain Clarity collectors, GSC sync and scheduled agents in the existing backend. Do not point duplicate collectors at production during preview.
+- Replace remaining demo pages/content/assets and confirm company facts and booking destination.
+- Verify 390px and desktop navigation, keyboard, reduced motion, all routes, SEO metadata and canonical URLs.
+- Preview on a separate Vercel project/branch; keep ziaflow.com on existing deployment until approved cutover.
+- For cutover, promote the approved replacement and retain the previous production deployment for rollback. Run a test inquiry and route crawl immediately; rollback for capture failures or missing existing URLs.
+
+Tracking: ClickUp 17tnw2b8wtd; Linear engineering linked in PR. This is a foundation, not launch readiness.
+
+Customer.io is mandatory for replacement forms. Use server-side credentials, preserve the agreed event contract and consent handling; verify persistence, acknowledgement and approved nurture independently. Never expose API keys in browser assets. Tracking: Linear ZIA-7.

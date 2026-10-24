@@ -6,7 +6,6 @@ import Loader from '@/components/shared/layout/loader.astro';
 import Menu from '@/components/shared/layout/menu.astro';
 import Navbar from '@/components/shared/layout/navbar.astro';
 import Transition from '@/components/shared/layout/transition.astro';
-import ViewChip from '@/components/shared/layout/view-chip.astro';
 import { site } from '@/data/site';
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME } from '@/utils/generate-meta-data';
 
@@ -18,9 +17,11 @@ interface Props {
   image?: string;
   preloader?: boolean;
   noindex?: boolean;
+  openGraph?: { title?: string; description?: string; locale?: string };
 }
 
-const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION, image, preloader = false, noindex = false } = Astro.props;
+const { title = DEFAULT_TITLE, description = DEFAULT_DESCRIPTION, image, preloader = false } = Astro.props;
+const { openGraph } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image ?? '/images/og-image.jpg', Astro.site);
 const customerIoSiteId = import.meta.env.PUBLIC_CUSTOMER_IO_SITE_ID;
@@ -45,25 +46,26 @@ const organizationSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow'} />
-    <meta name="google-site-verification" content="orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M" />
-    <meta name="theme-color" content="#0b0c0b" />
+    <meta name="theme-color" content="#1a1a1a" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:locale" content={openGraph?.locale ?? 'en'} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_NAME} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={openGraph?.title ?? title} />
+    <meta property="og:description" content={openGraph?.description ?? description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={openGraph?.title ?? title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="google-site-verification" content="orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M" />
     <meta name="generator" content={Astro.generator} />
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {Astro.url.pathname !== '/' && <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />}
     <style is:inline set:html={accentVars}></style>
     <Font cssVariable="--font-display-face" preload />
     <Font cssVariable="--font-body-face" preload />
@@ -133,38 +135,34 @@ const organizationSchema = {
     <Transition />
     <Navbar />
     <Menu />
-    <ViewChip />
+
     <div class="relative z-10 bg-ink" data-page>
       <main id="main">
         <slot />
       </main>
     </div>
     <Footer />
-    {
-      customerIoSiteId && (
-        <script is:inline define:vars={{ customerIoSiteId }}>
-          var _cio = window._cio = window._cio || [];
-          (function () {
-            var factory = function (method) {
-              return function () {
-                _cio.push([method].concat(Array.prototype.slice.call(arguments)));
-              };
-            };
-            ['load', 'identify', 'sidentify', 'track', 'page', 'on', 'off'].forEach(function (method) {
-              _cio[method] = factory(method);
-            });
-            var tracker = document.createElement('script');
-            var firstScript = document.getElementsByTagName('script')[0];
-            tracker.async = true;
-            tracker.id = 'cio-tracker';
-            tracker.setAttribute('data-site-id', customerIoSiteId);
-            tracker.setAttribute('data-use-array-params', 'true');
-            tracker.src = 'https://assets.customer.io/assets/track.js';
-            firstScript.parentNode.insertBefore(tracker, firstScript);
-          })();
-        </script>
-      )
-    }
+    {customerIoSiteId && <script is:inline define:vars={{ customerIoSiteId }}>
+      var _cio = (window._cio = window._cio || []);
+      (function () {
+        var factory = function (method) {
+          return function () {
+            _cio.push([method].concat(Array.prototype.slice.call(arguments)));
+          };
+        };
+        ['load', 'identify', 'sidentify', 'track', 'page', 'on', 'off'].forEach(function (method) {
+          _cio[method] = factory(method);
+        });
+        var tracker = document.createElement('script');
+        var firstScript = document.getElementsByTagName('script')[0];
+        tracker.async = true;
+        tracker.id = 'cio-tracker';
+        tracker.setAttribute('data-site-id', customerIoSiteId);
+        tracker.setAttribute('data-use-array-params', 'true');
+        tracker.src = 'https://assets.customer.io/assets/track.js';
+        firstScript.parentNode.insertBefore(tracker, firstScript);
+      })();
+    </script>}
     <script>
       import '@/components/animation/main';
     </script>

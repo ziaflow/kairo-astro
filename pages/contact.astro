@@ -28,7 +28,8 @@ const field =
         Start your digital transformation.
       </h2>
       <p class="mt-6 max-w-[48ch] text-lead text-mute">
-        Tell us about your project and we will get back to you within 24 hours. Whether you need custom development, automation, or marketing solutions, our team is ready to help.
+        Tell us about your project and we will get back to you within 24 hours. Whether you need custom development,
+        automation, or marketing solutions, our team is ready to help.
       </p>
       <div class="mt-14 grid border-t border-l border-line md:grid-cols-3">
         <a href="mailto:info@ziaflow.com" class="group min-h-64 border-r border-b border-line p-8 hover:bg-ink-2">
@@ -58,11 +59,12 @@ const field =
           Tell us what needs to work better.
         </h2>
         <p class="mt-6 max-w-[42ch] text-mute">
-          Share the goal, the bottleneck, and the best way to reach you. You will receive an immediate confirmation and a personal reply within one working day.
+          Share the goal, the bottleneck, and the best way to reach you. Use this form to send your project details, or
+          call us directly.
         </p>
       </div>
 
-      <form class="lg:col-span-6 lg:col-start-7" data-contact-form>
+      <form action="/api/contact" method="post" class="lg:col-span-6 lg:col-start-7" data-contact-form>
         <input type="hidden" name="form_name" value="contact" />
         <input class="hidden" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="grid gap-x-6 gap-y-8 md:grid-cols-2">
@@ -72,7 +74,14 @@ const field =
           </label>
           <label class="flex flex-col gap-2 text-sm text-bone">
             Work email
-            <input class={field} name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+            <input
+              class={field}
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@company.com"
+              required
+            />
           </label>
           <label class="flex flex-col gap-2 text-sm text-bone">
             Phone
@@ -88,7 +97,12 @@ const field =
           </label>
           <label class="flex flex-col gap-2 text-sm text-bone md:col-span-2">
             Project details
-            <textarea class={`${field} h-auto resize-y py-3`} name="message" rows="4" placeholder="What are you trying to improve?" required></textarea>
+            <textarea
+              class={`${field} h-auto resize-y py-3`}
+              name="message"
+              rows="4"
+              placeholder="What are you trying to improve?"
+              required></textarea>
           </label>
         </div>
         <div class="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
@@ -96,7 +110,11 @@ const field =
             Send project details
           </button>
           <p class="max-w-[34ch] text-sm text-mute">
-            By submitting, you agree to receive email about your request. Unsubscribe anytime. See our <a class="underline" href="/privacy">privacy policy</a>.
+            We use these details to respond to your inquiry. This does not subscribe you to marketing emails. See our{' '}
+            <a class="underline" href="/privacy">
+              privacy policy
+            </a>
+            .
           </p>
         </div>
         <p class="mt-5 min-h-6 text-sm" role="status" aria-live="polite" data-contact-status></p>
