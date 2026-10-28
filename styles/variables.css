@@ -1,14 +1,14 @@
 @theme {
-  --color-ink: #0b0c0b;
-  --color-ink-2: #121312;
-  --color-ink-3: #1b1c1a;
+  --color-ink: #1a1a1a;
+  --color-ink-2: #202020;
+  --color-ink-3: #292929;
   --color-line: rgb(235 233 226 / 0.12);
   --color-line-strong: rgb(235 233 226 / 0.24);
-  --color-bone: #ebe9e2;
-  --color-mute: #a3a199;
-  --color-dim: #75736c;
-  --color-signal: #ff5b1f;
-  --color-signal-soft: rgb(255 91 31 / 0.14);
+  --color-bone: #ffffff;
+  --color-mute: #b8b8b8;
+  --color-dim: #929292;
+  --color-signal: #a22a36;
+  --color-signal-soft: rgb(162 42 54 / 0.14);
 
   --font-display: var(--font-display-face), sans-serif;
   --font-body: var(--font-body-face), sans-serif;

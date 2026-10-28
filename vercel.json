@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/posts", "destination": "/blog", "permanent": true },
+    { "source": "/ziaflow", "destination": "/about", "permanent": true },
+    { "source": "/form-test", "destination": "/contact", "permanent": false },
+    { "source": "/sitemap-index.xml", "destination": "/sitemap.xml", "permanent": true },
+    { "source": "/sitemap-0.xml", "destination": "/sitemap.xml", "permanent": true }
+  ]
+}

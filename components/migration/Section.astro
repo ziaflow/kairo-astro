@@ -1,0 +1,72 @@
+---
+import Button from '@/components/shared/ui/button.astro';
+const {
+  title,
+  subtitle,
+  tagline,
+  information,
+  items = [],
+  actions = [],
+  stats = [],
+  testimonials = [],
+  kind,
+  image,
+} = Astro.props;
+---
+
+<section class="shell">
+  <header class="section-head">
+    {tagline && <p class="eyebrow">{tagline}</p>}
+    {title && <h2>{title}</h2>}
+    {(subtitle || information) && <p>{subtitle || information}</p>}
+  </header>
+  <slot name="content" />
+  {image && <img class="my-10 aspect-[16/7] w-full rounded-2xl object-cover" src={image.src} alt={image.alt} width="1600" height="700" loading="lazy" />}
+  {kind === 'FAQs' ? (
+    items.map((item: any) => (
+      <details>
+        <summary>{item.title}</summary>
+        <p>{item.description}</p>
+      </details>
+    ))
+  ) : (
+    <div class="cards">
+      {items.map((item: any) => (
+        <article class="card">
+          <h3>{item.title}</h3>
+          {item.description && <p>{item.description}</p>}
+          {item.callToAction && <a href={item.callToAction.href}>{item.callToAction.text}</a>}
+        </article>
+      ))}
+    </div>
+  )}
+  {stats.length > 0 && (
+    <div class="cards">
+      {stats.map((item: any) => (
+        <div class="card">
+          <strong class="text-4xl">{item.amount}</strong>
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  )}
+  {testimonials.length > 0 && (
+    <div class="cards">
+      {testimonials.map((item: any) => (
+        <figure class="card">
+          <blockquote>{item.testimonial}</blockquote>
+          <figcaption class="mt-6">
+            {item.name} · {item.job}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )}
+  {actions.length > 0 && (
+    <div class="actions">
+      {actions.map((item: any, i: number) => (
+        <Button label={item.text} href={item.href} variant={i === 0 ? 'signal' : 'outline'} />
+      ))}
+    </div>
+  )}
+</section>

@@ -1,19 +1,31 @@
 ---
-import Capabilities from '@/components/home/capabilities.astro';
-import Hero from '@/components/home/hero.astro';
-import HowItWorks from '@/components/home/how-it-works.astro';
-import Manifesto from '@/components/home/manifesto.astro';
-import Cta from '@/components/shared/cta.astro';
-import Layout from '@/layouts/layout.astro';
+import Layout from '@/components/migration/Page.astro';
+import StructuralGridHero from '@/components/migration/StructuralGridHero.astro';
+import ZoltServiceMatrix from '@/components/migration/ZoltServiceMatrix.astro';
+import BlogLatestPosts from '@/components/migration/BlogLatestPosts.astro';
+import Button from '@/components/shared/ui/button.astro';
+const metadata = {
+  title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
+  description: 'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a consultation with ZiaFlow.',
+};
 ---
-
-<Layout
-  title="Phoenix Web Development & Digital Marketing Agency | ZiaFlow"
-  description="Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a free consultation with our Phoenix team."
-  preloader>
-  <Hero />
-  <Manifesto />
-  <Capabilities />
-  <HowItWorks />
-  <Cta />
+<Layout metadata={metadata}>
+  <StructuralGridHero />
+  <ZoltServiceMatrix />
+  <section class="shell">
+    <header class="section-head"><p class="eyebrow">Data-Driven Content Strategy</p><h2>Plan content around customer questions.</h2><p>Review search data, existing pages, and your service offering to decide what to update and what to write next.</p></header>
+    <div class="cards"><article class="card"><h3>Content Review</h3><p>Check existing pages for relevant information, navigation, metadata, and contact paths.</p></article><article class="card"><h3>Editorial Workflow</h3><p>Define topics, source material, review responsibilities, and publishing steps.</p></article></div>
+  </section>
+  <section class="shell">
+    <header class="section-head"><h2>Frequently Asked Questions</h2><p>Services, process, and project scope.</p></header>
+    <details><summary>Do you work with businesses outside Arizona?</summary><p>ZiaFlow is based in Phoenix and works with businesses across the United States through remote collaboration.</p></details>
+    <details><summary>How do you measure success?</summary><p>We agree on acceptance criteria and the events or outcomes your existing systems can measure before implementation.</p></details>
+    <details><summary>What is included in marketing automation?</summary><p>The scope can include inquiry capture, assignment, scheduling, and reviewed follow-up workflows. Each project defines the systems, access, and responsibilities involved.</p></details>
+  </section>
+  <section class="shell">
+    <header class="section-head"><h2>Contact ZiaFlow</h2><p>Discuss your current website, tools, and project requirements.</p></header>
+    <div class="actions"><Button label="Call (602) 834-4239" href="tel:+16028344239" /><Button label="Send project details" href="/contact" variant="outline" /><Button label="Book consultation" href="/booking" variant="outline" /></div>
+    <p><a class="text-link" href="mailto:info@ziaflow.com">info@ziaflow.com</a> · Phoenix, Arizona</p>
+  </section>
+  <BlogLatestPosts title="Digital Marketing Insights" information="Local SEO, automation, conversion, and web development articles." />
 </Layout>

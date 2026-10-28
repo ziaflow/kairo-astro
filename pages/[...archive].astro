@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/layout.astro';
+import { archives } from '@/utils/blog-taxonomy';
+export async function getStaticPaths() {
+  return [...archives(await getCollection('blog'))].map(([archive, group]) => ({ params: { archive }, props: group }));
+}
+const { title, posts } = Astro.props;
+---
+<Layout title={`${title} Articles | ZiaFlow`} description={`ZiaFlow articles about ${title.toLowerCase()} for service businesses.`}>
+  <section class="shell pt-40 pb-24">
+    <a href="/blog" class="underline">All articles</a>
+    <h1 class="mt-8 font-display text-title font-bold">{title}</h1>
+    <div class="mt-12 divide-y divide-line">
+      {posts.map(post => <article class="py-8"><h2 class="text-2xl font-bold"><a href={`/${post.id}`} class="underline">{post.data.title}</a></h2><p class="mt-4 max-w-3xl text-mute">{post.data.excerpt}</p></article>)}
+    </div>
+  </section>
+</Layout>

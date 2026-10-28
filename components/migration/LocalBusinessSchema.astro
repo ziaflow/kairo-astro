@@ -1,0 +1,40 @@
+---
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Custom Web Development & SEO',
+  description:
+    'ZiaFlow specializes in creating high-performing, responsive websites and local SEO strategies for Phoenix service businesses.',
+  image: 'https://gmldsdtmahtgrbwwowtn.supabase.co/storage/v1/object/sign/website-test/img/ziaflow_chip_blue.png',
+  '@id': 'https://ziaflow.com/#organization',
+  url: 'https://ziaflow.com/',
+  telephone: '+1-602-834-4239',
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2822 E Greenway Rd Suite 10 B',
+    addressLocality: 'Phoenix',
+    addressRegion: 'AZ',
+    postalCode: '85032',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 33.6262,
+    longitude: -112.0205,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/ziaflow/',
+    'https://www.facebook.com/ZiaFlowAZ/',
+    'https://www.instagram.com/ziaflowaz/',
+  ],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

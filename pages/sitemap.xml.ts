@@ -1,8 +1,9 @@
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
+import { archives } from '@/utils/blog-taxonomy';
 import { services } from '@/data/services';
 
-const staticPaths = ['/', '/about', '/booking', '/contact', '/pricing', '/privacy', '/services', '/terms', '/blog'];
+const staticPaths = ['/', '/about', '/booking', '/contact', '/pricing', '/privacy', '/services', '/terms', '/blog', '/audit', '/platforms/callrail'];
 
 export const GET: APIRoute = async ({ site }) => {
   const posts = await getCollection('blog');
@@ -10,6 +11,7 @@ export const GET: APIRoute = async ({ site }) => {
     ...staticPaths,
     ...services.map(({ slug }) => `/services/${slug}`),
     ...posts.map(({ id }) => `/${id}`),
+    ...[...archives(posts).keys()].map(path => `/${path}`),
   ];
   const urls = paths
     .map((path) => `  <url><loc>${new URL(path, site)}</loc><changefreq>weekly</changefreq></url>`)

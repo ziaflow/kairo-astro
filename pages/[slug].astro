@@ -18,6 +18,13 @@ const { Content } = await render(post);
 ---
 
 <Layout title={pageTitle(post.data.title)} description={post.data.excerpt}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BlogPosting', headline: post.data.title,
+    description: post.data.excerpt, datePublished: post.data.publishDate.toISOString(),
+    mainEntityOfPage: new URL(`/${post.id}`, Astro.site).href,
+    author: { '@type': 'Organization', name: post.data.author ?? 'ZiaFlow' },
+    publisher: { '@type': 'Organization', name: 'ZiaFlow', url: 'https://ziaflow.com' },
+  })} />
   <article>
     <header class="shell pt-36 pb-16 md:pt-44 md:pb-24">
       <a href="/blog" class="font-mono text-label text-signal uppercase">← Blog</a>

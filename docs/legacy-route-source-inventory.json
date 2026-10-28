@@ -1,0 +1,299 @@
+{
+  "baseline_commit": "90c74b6244c894e32f8ee5a411656371d18a988e",
+  "scope": "repository inventory, not a complete live crawl or Sanity audit",
+  "sanity": {
+    "projectId": "92p0tpps",
+    "dataset": "production",
+    "source": "astro.config.ts",
+    "access_verified": false
+  },
+  "entries": [
+    {
+      "source": "src/pages/404.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/[...blog]/[...page].astro",
+      "kind": "dynamic route: verify emitted URLs",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/[...blog]/[category]/[...page].astro",
+      "kind": "dynamic route: verify emitted URLs",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/[...blog]/[tag]/[...page].astro",
+      "kind": "dynamic route: verify emitted URLs",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/[...blog]/index.astro",
+      "kind": "dynamic route: verify emitted URLs",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/_api/forms/audit.ts",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/about.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/api/contact.ts",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/booking.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/contact.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/form-test.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/homes/.mobile-app.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/homes/.personal.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/homes/.saas.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/homes/.startup.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/index.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/landing/.click-through.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/landing/.pre-launch.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/landing/.product.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/landing/.sales.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/landing/.subscription.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/llms.txt.ts",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/posts/[slug].astro",
+      "kind": "dynamic route: verify emitted URLs",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/posts/index.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/pricing.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/privacy.md",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/rss.xml.ts",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/automation.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/cloud.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/cro.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/ecommerce.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/gmb-optimization.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/local-service-ads.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/performance-tracking.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/ppc.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/review-management.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/seo.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/social-media.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/software.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services/web-development.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/services.astro",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/terms.md",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/pages/ziaflow.md",
+      "kind": "source route",
+      "migration": "retain"
+    },
+    {
+      "source": "src/data/post/.landing.md",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post/Google Local Service Ads in 2025.md",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post/Marketing Automation for Arizona Service Businesses \u2014 Save Time & Increase Bookings.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post/Website Conversion Checklist for Phoenix Businesses.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post/reduce-bounce-rate-with-ai.md",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post/website-analysis-tasks.md",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post-generated/global-seo-dashboard.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post-generated/google-lsa-electricians-phoenix-arizona.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post-generated/microsoft-ads-complete-guide-2026.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post-generated/web-development-in-2026-a-practical-guide-to-building-fast-secure-conversion-ready-websites.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post-generated/web-development-in-2026-a-practical-guide-to-building-fast-secure-high-converting-websites.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    },
+    {
+      "source": "src/data/post-generated/web-development-in-2026-a-practical-guide-to-building-fast-secure-highconverting-websites.mdx",
+      "slug": null,
+      "kind": "article source; resolve through existing loader",
+      "migration": "retain; no bulk publication"
+    }
+  ]
+}

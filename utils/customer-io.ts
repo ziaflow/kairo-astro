@@ -15,8 +15,12 @@ export const leadData = (values: Record<string, FormDataEntryValue>, pageUrl: st
 
   return {
     profile: {
-      id: String(values.email ?? '').trim().toLowerCase(),
-      email: String(values.email ?? '').trim().toLowerCase(),
+      id: String(values.email ?? '')
+        .trim()
+        .toLowerCase(),
+      email: String(values.email ?? '')
+        .trim()
+        .toLowerCase(),
       first_name: firstName,
       last_name: lastName.join(' ') || undefined,
       phone: String(values.phone ?? '').trim() || undefined,
@@ -25,7 +29,9 @@ export const leadData = (values: Record<string, FormDataEntryValue>, pageUrl: st
     },
     event: {
       name,
-      email: String(values.email ?? '').trim().toLowerCase(),
+      email: String(values.email ?? '')
+        .trim()
+        .toLowerCase(),
       phone: String(values.phone ?? '').trim(),
       company: String(values.company ?? '').trim(),
       service_interest: String(values.service_interest ?? 'general'),
@@ -42,12 +48,16 @@ export const track = (event: string, data?: CustomerIoData) => {
   return true;
 };
 
-export const submitLead = (values: Record<string, FormDataEntryValue>) => {
-  if (!window._cio?.identify || !window._cio?.track) return false;
-  const data = leadData(values, window.location.href);
-  window._cio.identify(data.profile);
-  window._cio.track('form_submit', data.event);
-  return true;
+// The browser never triggers the nurture campaign. A server receipt is required.
+export const submitLead = async (values: Record<string, FormDataEntryValue>, submissionId: string) => {
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ ...values, submission_id: submissionId, page_url: window.location.href }),
+  });
+  const receipt = await response.json();
+  if (!response.ok || receipt.submission_id !== submissionId) throw new Error('Intake not confirmed');
+  return receipt;
 };
 
 export const subscribe = (email: string) => {

@@ -1,94 +1,38 @@
 ---
-import Button from '@/components/shared/ui/button.astro';
-import PageHero from '@/components/shared/page-hero.astro';
-import { bookingUrl } from '@/data/services';
 import Layout from '@/layouts/layout.astro';
-import { pageTitle } from '@/utils/generate-meta-data';
-
+import PageHero from '@/components/shared/page-hero.astro';
+import Button from '@/components/shared/ui/button.astro';
 const capabilities = [
-  ['Custom Development', 'Web applications, mobile apps, portals, and software built around the way your business actually operates.'],
-  ['SEO & PPC Marketing', 'Search and paid media programs focused on qualified demand, measurable conversions, and durable market visibility.'],
-  ['Workflow Automation', 'Connected intake, CRM, scheduling, follow-up, and reporting systems that remove repetitive work.'],
-  ['CRM & ERP Solutions', 'Practical implementations and integrations that keep customer and operational data useful across the business.'],
-  ['Marketing Automation', 'Lead nurturing and lifecycle workflows that help your team respond quickly and consistently.'],
-  ['Strategic Consulting', 'A clear technical and growth roadmap grounded in business outcomes rather than a list of disconnected tools.'],
-];
-
-const values = [
-  ['Customer success first', 'Every recommendation starts with the outcome the client needs, not the technology we happen to prefer.'],
-  ['Technical excellence', 'We build reliable, secure, fast systems that can be understood and owned after launch.'],
-  ['Transparency and integrity', 'Clear scope, direct communication, measurable work, and no manufactured complexity.'],
-  ['Industry understanding', 'We learn the operating reality behind the project so the result works in the real business.'],
+  ['Custom Development', 'Websites, internal tools, portals, and integrations scoped around your business requirements.'],
+  ['SEO & PPC Marketing', 'Technical search reviews, content planning, advertising configuration, and reporting.'],
+  ['Workflow Automation', 'Defined processes for inquiry capture, assignment, scheduling, and follow-up.'],
+  ['CRM & ERP Solutions', 'Field mapping, system configuration, and connected customer and operational records.'],
+  ['Marketing Automation', 'Customer events, segmentation, and reviewed communication workflows.'],
+  ['Strategic Consulting', 'A documented assessment of your current systems, priorities, and implementation options.'],
 ];
 ---
-
-<Layout
-  title={pageTitle('About ZiaFlow - Digital Transformation Partners')}
-  description="Meet ZiaFlow, a Phoenix digital transformation partner for custom development, SEO, PPC, automation, CRM, and cloud solutions.">
-  <PageHero
-    lines={['Technology that', 'serves the business.']}
-    accent={1}
-    intro="ZiaFlow helps businesses operate, market, and grow through connected digital systems. We combine engineering, automation, and performance marketing so every part of the customer journey supports the same outcome."
-  />
-
-  <section class="border-t border-line" aria-labelledby="about-capabilities">
-    <div class="shell py-24 md:py-32">
-      <p class="font-mono text-label text-signal uppercase">What we do</p>
-      <h2 id="about-capabilities" class="mt-4 max-w-[14ch] font-display text-title font-bold text-bone" data-split>
-        Digital solutions that work together.
-      </h2>
-      <div class="mt-14 grid border-t border-l border-line md:grid-cols-2 lg:grid-cols-3">
-        {capabilities.map(([title, description], index) => (
-          <article class="min-h-64 border-r border-b border-line p-8" data-reveal>
-            <p class="font-mono text-label text-dim">{String(index + 1).padStart(2, '0')}</p>
-            <h3 class="mt-10 font-display text-2xl font-bold text-bone">{title}</h3>
-            <p class="mt-4 text-mute">{description}</p>
-          </article>
-        ))}
-      </div>
+<Layout title="About ZiaFlow - Digital Transformation Partners" description="Learn about ZiaFlow, Phoenix digital transformation partner helping businesses with custom software, workflow automation, and SEO.">
+  <PageHero lines={['Empowering businesses through', 'Digital Transformation']} intro="Based in the Greater Phoenix Area, ZiaFlow works with small and medium-sized businesses on websites, software, marketing, and automation. We begin with your business objectives and the way your team currently operates." />
+  <section class="shell py-24">
+    <img src="/images/phoenix-skyline.jpg" alt="Phoenix skyline at sunset" class="aspect-[16/7] w-full rounded-2xl object-cover" width="1600" height="700" loading="lazy" />
+    <h2 class="mt-16 font-display text-title font-bold">What We Do</h2>
+    <p class="mt-6 max-w-3xl text-mute">Our work connects the digital tools used to operate, market, and manage a business.</p>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {capabilities.map(([title, description]) => <article class="border border-line p-8"><h3 class="text-2xl font-bold">{title}</h3><p class="mt-4 text-mute">{description}</p></article>)}
     </div>
   </section>
-
-  <section class="border-t border-line bg-ink-2" aria-labelledby="about-values">
-    <div class="shell grid gap-14 py-24 md:py-32 lg:grid-cols-12">
-      <div class="lg:col-span-5">
-        <p class="font-mono text-label text-signal uppercase">Our core values</p>
-        <h2 id="about-values" class="mt-4 max-w-[12ch] font-display text-title font-bold text-bone" data-split>
-          The principles behind the work.
-        </h2>
-        <p class="mt-6 max-w-[42ch] text-mute">
-          ZiaFlow is based in Phoenix, Arizona and serves clients nationwide through a focused, collaborative process.
-        </p>
-      </div>
-      <ol class="divide-y divide-line border-y border-line lg:col-span-6 lg:col-start-7">
-        {values.map(([title, body], index) => (
-          <li class="grid gap-4 py-7 sm:grid-cols-[3rem_1fr]" data-reveal>
-            <span class="font-mono text-label text-signal">{String(index + 1).padStart(2, '0')}</span>
-            <div>
-              <h3 class="font-display text-2xl font-bold text-bone">{title}</h3>
-              <p class="mt-3 text-mute">{body}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+  <section class="shell border-t border-line py-24">
+    <h2 class="font-display text-title font-bold">Our Core Values</h2>
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      <article><h3 class="text-2xl font-bold">Customer Success First</h3><p class="mt-4 text-mute">Start with the client's objectives, operating needs, and definition of an accepted result.</p></article>
+      <article><h3 class="text-2xl font-bold">Technical Excellence</h3><p class="mt-4 text-mute">Define requirements and verify implementation against agreed acceptance checks.</p></article>
+      <article><h3 class="text-2xl font-bold">Transparency &amp; Integrity</h3><p class="mt-4 text-mute">Document scope, timelines, responsibilities, and limitations before work begins.</p></article>
+      <article><h3 class="text-2xl font-bold">Industry Understanding</h3><p class="mt-4 text-mute">Learn how the business operates before recommending a tool or workflow.</p></article>
     </div>
   </section>
-
-  <section class="border-t border-line">
-    <div class="shell flex flex-col gap-10 py-24 md:flex-row md:items-end md:justify-between md:py-32">
-      <div>
-        <p class="font-mono text-label text-signal uppercase">Partner network</p>
-        <h2 class="mt-4 max-w-[13ch] font-display text-title font-bold text-bone" data-split>
-          Built to work with the platforms you trust.
-        </h2>
-        <p class="mt-6 max-w-[50ch] text-mute">
-          Our work spans Microsoft Azure, AWS, Supabase, Sanity, Vercel, Customer.io, Superhuman, and the marketing systems your team already uses.
-        </p>
-      </div>
-      <div class="flex flex-wrap gap-3">
-        <Button label="Book consultation" href={bookingUrl} />
-        <Button label="Contact ZiaFlow" href="/contact" variant="outline" />
-      </div>
-    </div>
+  <section class="shell border-t border-line py-24">
+    <h2 class="font-display text-title font-bold">Where We Work</h2>
+    <p class="mt-6 max-w-3xl text-mute">ZiaFlow is based in Phoenix, Arizona and works with businesses across the United States through remote collaboration.</p>
+    <div class="mt-10 flex flex-wrap gap-4"><Button label="Contact ZiaFlow" href="/contact" /><Button label="Call (602) 834-4239" href="tel:+16028344239" variant="outline" /></div>
   </section>
 </Layout>
