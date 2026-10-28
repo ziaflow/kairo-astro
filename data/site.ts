@@ -11,7 +11,7 @@ export const site: SiteConfig = {
   careersEmail: 'info@ziaflow.com',
   accent: '#A22A36',
   cta: {
-    primary: { label: 'Contact Us', href: 'https://ziaflow.com/contact' },
+    primary: { label: 'Contact Us', href: '/contact' },
     secondary: {
       label: 'Book Tech Consult',
       href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',

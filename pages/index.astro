@@ -2,232 +2,30 @@
 import Layout from '@/components/migration/Page.astro';
 import StructuralGridHero from '@/components/migration/StructuralGridHero.astro';
 import ZoltServiceMatrix from '@/components/migration/ZoltServiceMatrix.astro';
-import Features3 from '@/components/migration/Features3.astro';
-import FAQs from '@/components/migration/FAQs.astro';
 import BlogLatestPosts from '@/components/migration/BlogLatestPosts.astro';
-import Stats from '@/components/migration/Stats.astro';
-import CallToAction from '@/components/migration/CallToAction.astro';
-import Testimonials from '@/components/migration/Testimonials.astro';
-
-import LocalBusinessSchema from '@/components/migration/LocalBusinessSchema.astro';
-import Content from '@/components/migration/Content.astro';
-
+import Button from '@/components/shared/ui/button.astro';
 const metadata = {
   title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
-  description:
-    'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a free consultation with our Phoenix team.',
-  ignoreTitleTemplate: true,
-  openGraph: {
-    url: 'https://ziaflow.com/',
-    siteName: 'ZiaFlow',
-    type: 'website',
-    locale: 'en',
-    title: 'ZiaFlow | Custom Software & AI Automation Agents',
-    description:
-      'Deploy autonomous AI agents, HIPAA-compliant voice assistants, and custom software. Call (602) 834-4239 to engineer your growth solutions with ZiaFlow.',
-    images: [
-      {
-        url: 'https://ziaflow.com/logo.png',
-        width: 1200,
-        height: 628,
-        alt: 'ZiaFlow Digital Growth Partner',
-      },
-    ],
-  },
-  extend: {
-    meta: [
-      {
-        property: 'og:logo',
-        content: 'https://ziaflow.com/logo.png',
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image',
-      },
-      {
-        name: 'twitter:url',
-        content: 'https://ziaflow.com/',
-      },
-      {
-        name: 'twitter:title',
-        content: 'ZiaFlow | Custom Software & AI Automation Agents',
-      },
-      {
-        name: 'twitter:image',
-        content: 'https://ziaflow.com/logo.png',
-      },
-    ],
-  },
+  description: 'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a consultation with ZiaFlow.',
 };
 ---
-
 <Layout metadata={metadata}>
-  <LocalBusinessSchema />
-
   <StructuralGridHero />
-
   <ZoltServiceMatrix />
-
-  <Stats
-    stats={[
-      { title: 'Arizona Clients', amount: '50+' },
-      { title: 'Avg. Lead Growth', amount: '150%' },
-      { title: 'Google Rating', amount: '5.0★' },
-      { title: 'Years in Phoenix', amount: '4+' },
-    ]}
-    tagline="Trusted by Phoenix-Area Service Businesses"
-  />
-
-  <Content
-    title="Data-Driven Content Strategy"
-    subtitle="Proprietary AI that analyzes competitor data to write grounded, SEO-optimized content."
-    items={[
-      {
-        title: 'Competitor Analysis',
-        description:
-          'Our AI scans the top-ranking competitors in your niche to identify content gaps and opportunities.',
-      },
-      {
-        title: 'Optimized Workflow',
-        description: 'Generate high-quality, undetectable AI content that ranks on Google and engages real humans.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Data Driven Dashboard',
-    }}>
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-primary">Intelligence</span> Dashboard
-      </h3>
-    </Fragment>
-  </Content>
-
-  <Testimonials
-    title="Trusted by Tech Leaders"
-    tagline="Success Stories"
-    testimonials={[
-      {
-        testimonial:
-          'ZiaFlow has transformed our business with their automation solutions. Their tailored approach and expertise have streamlined our processes, saving us time and boosting our productivity. Highly recommend!',
-        name: 'K. B.',
-        job: 'COO',
-      },
-      {
-        testimonial:
-          'Ziaflow is a top-notch company with great service, expert knowledge, and competitive prices. Highly recommended!',
-        name: 'J. M.',
-        job: 'Investor',
-      },
-    ]}
-  />
-
-  <CallToAction
-    title="Ready to engineer your growth?"
-    subtitle="Book a transparent technical consultation or call us immediately. No sales pressure, just a roadmap to automation."
-    actions={[
-      {
-        variant: 'primary',
-        text: '📞 (602) 834-4239',
-        href: 'tel:+16028344239',
-        classes: {
-          btn: 'bg-emerald-500 hover:bg-emerald-600 border-emerald-500 hover:border-emerald-600 font-bold text-white shadow-lg shadow-emerald-500/25',
-        },
-      },
-      {
-        variant: 'primary',
-        text: 'Book Tech Consult',
-        href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',
-        icon: 'tabler:calendar',
-      },
-      {
-        variant: 'secondary',
-        text: 'Contact Us',
-        href: 'mailto:info@ziaflow.com',
-      },
-    ]}
-  />
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Answers to common questions about our services and process."
-    tagline="FAQ"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'What makes ZiaFlow different from other agencies?',
-        description:
-          "We specialize in the home services, medical, and ecommerce sectors, understanding their unique challenges. Our in-house team includes software developers and AI experts, allowing us to build custom solutions that other agencies can't.",
-      },
-      {
-        title: 'How do you measure success?',
-        description:
-          'We focus on what matters: leads and revenue. Our transparent dashboards track calls, appointments, and sales, providing clear insight into your ROI.',
-      },
-      {
-        title: 'Do you work with businesses outside of Arizona?',
-        description:
-          'Yes. While we proudly serve businesses in Phoenix, Scottsdale, Tucson, and Glendale, we also partner with companies nationwide to provide digital marketing, custom software, and cloud solutions.',
-      },
-      {
-        title: 'How quickly will I see results?',
-        description:
-          'PPC campaigns can generate leads within days, while SEO typically shows significant improvement in 3-6 months. We provide realistic timelines for all projects upfront.',
-      },
-      {
-        title: 'What is included in your marketing automation services?',
-        description:
-          'Our AI-powered automation can handle lead nurturing, appointment scheduling, customer follow-ups, review requests, and service inquiries. We customize every system to fit your specific business processes.',
-      },
-    ]}
-  />
-
-  <Features3
-    title="Contact ZiaFlow"
-    subtitle="Choose the method that works best for you"
-    columns={4}
-    items={[
-      {
-        title: 'Call Us Now',
-        icon: 'tabler:phone-call',
-        callToAction: {
-          text: '📞 (602) 834-4239',
-          href: 'tel:+16028344239',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Email',
-        icon: 'tabler:mail',
-        callToAction: {
-          text: 'info@ziaflow.com',
-          href: 'mailto:info@ziaflow.com',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Visit',
-        icon: 'tabler:map-pin',
-        callToAction: {
-          text: 'Phoenix, AZ 85023',
-          href: 'https://maps.google.com?q=Phoenix+AZ+85023',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Schedule',
-        icon: 'tabler:calendar',
-        callToAction: {
-          text: 'Book Meeting',
-          href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',
-          variant: 'link',
-        },
-      },
-    ]}
-  />
-
-  <BlogLatestPosts
-    title="Digital Marketing Insights"
-    information="Local SEO, automation playbooks, CRO, and case studies for Arizona businesses."
-  />
+  <section class="shell">
+    <header class="section-head"><p class="eyebrow">Data-Driven Content Strategy</p><h2>Plan content around customer questions.</h2><p>Review search data, existing pages, and your service offering to decide what to update and what to write next.</p></header>
+    <div class="cards"><article class="card"><h3>Content Review</h3><p>Check existing pages for relevant information, navigation, metadata, and contact paths.</p></article><article class="card"><h3>Editorial Workflow</h3><p>Define topics, source material, review responsibilities, and publishing steps.</p></article></div>
+  </section>
+  <section class="shell">
+    <header class="section-head"><h2>Frequently Asked Questions</h2><p>Services, process, and project scope.</p></header>
+    <details><summary>Do you work with businesses outside Arizona?</summary><p>ZiaFlow is based in Phoenix and works with businesses across the United States through remote collaboration.</p></details>
+    <details><summary>How do you measure success?</summary><p>We agree on acceptance criteria and the events or outcomes your existing systems can measure before implementation.</p></details>
+    <details><summary>What is included in marketing automation?</summary><p>The scope can include inquiry capture, assignment, scheduling, and reviewed follow-up workflows. Each project defines the systems, access, and responsibilities involved.</p></details>
+  </section>
+  <section class="shell">
+    <header class="section-head"><h2>Contact ZiaFlow</h2><p>Discuss your current website, tools, and project requirements.</p></header>
+    <div class="actions"><Button label="Call (602) 834-4239" href="tel:+16028344239" /><Button label="Send project details" href="/contact" variant="outline" /><Button label="Book consultation" href="/booking" variant="outline" /></div>
+    <p><a class="text-link" href="mailto:info@ziaflow.com">info@ziaflow.com</a> · Phoenix, Arizona</p>
+  </section>
+  <BlogLatestPosts title="Digital Marketing Insights" information="Local SEO, automation, conversion, and web development articles." />
 </Layout>

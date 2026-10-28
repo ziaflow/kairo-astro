@@ -1,0 +1,12 @@
+---
+import Button from '@/components/shared/ui/button.astro';
+const { title, subtitle, tagline, actions = [], image } = Astro.props;
+---
+<section class="shell hero">
+  {tagline && <p class="eyebrow">{tagline}</p>}
+  <h1>{title}<slot name="title" /></h1>
+  {subtitle && <p class="max-w-3xl text-lead">{subtitle}</p>}
+  <slot name="subtitle" />
+  <div class="actions">{actions.map((action: any) => <Button label={action.text} href={action.href} />)}</div>
+  {image && <img class="mt-12 aspect-[16/7] w-full rounded-2xl object-cover" src={image.src} alt={image.alt} width="1600" height="700" loading="lazy" />}
+</section>
