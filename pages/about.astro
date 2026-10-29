@@ -3,7 +3,10 @@ import Layout from '@/layouts/layout.astro';
 import PageHero from '@/components/shared/page-hero.astro';
 import Button from '@/components/shared/ui/button.astro';
 const capabilities = [
-  ['Custom Development', 'Websites, internal tools, portals, and integrations scoped around your business requirements.'],
+  [
+    'Custom Development',
+    'Websites, internal tools, portals, and integrations scoped around your business requirements.',
+  ],
   ['SEO & PPC Marketing', 'Technical search reviews, content planning, advertising configuration, and reporting.'],
   ['Workflow Automation', 'Defined processes for inquiry capture, assignment, scheduling, and follow-up.'],
   ['CRM & ERP Solutions', 'Field mapping, system configuration, and connected customer and operational records.'],
@@ -11,28 +14,68 @@ const capabilities = [
   ['Strategic Consulting', 'A documented assessment of your current systems, priorities, and implementation options.'],
 ];
 ---
-<Layout title="About ZiaFlow - Digital Transformation Partners" description="Learn about ZiaFlow, Phoenix digital transformation partner helping businesses with custom software, workflow automation, and SEO.">
-  <PageHero lines={['Empowering businesses through', 'Digital Transformation']} intro="Based in the Greater Phoenix Area, ZiaFlow works with small and medium-sized businesses on websites, software, marketing, and automation. We begin with your business objectives and the way your team currently operates." />
+
+<Layout
+  title="About ZiaFlow | Phoenix Web & Automation Services"
+  description="Meet ZiaFlow, a Phoenix business helping service companies improve websites, SEO, inquiry handling, and everyday workflows.">
+  <PageHero
+    lines={['Practical technology.', 'Clear responsibilities.']}
+    intro="ZiaFlow is led by Jeremy Sanchez in Phoenix, Arizona. We help service businesses improve websites, marketing, and operational workflows, starting with how your business works today and the problem you want to solve."
+  />
   <section class="shell py-24">
-    <img src="/images/phoenix-skyline.jpg" alt="Phoenix skyline at sunset" class="aspect-[16/7] w-full rounded-2xl object-cover" width="1600" height="700" loading="lazy" />
+    <img
+      src="/images/phoenix-skyline.jpg"
+      alt="Phoenix skyline at sunset"
+      class="aspect-[16/7] w-full rounded-2xl object-cover"
+      width="1600"
+      height="700"
+      loading="lazy"
+    />
     <h2 class="mt-16 font-display text-title font-bold">What We Do</h2>
-    <p class="mt-6 max-w-3xl text-mute">Our work connects the digital tools used to operate, market, and manage a business.</p>
+    <p class="mt-6 max-w-3xl text-mute">
+      Our work connects the digital tools used to operate, market, and manage a business.
+    </p>
     <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {capabilities.map(([title, description]) => <article class="border border-line p-8"><h3 class="text-2xl font-bold">{title}</h3><p class="mt-4 text-mute">{description}</p></article>)}
+      {capabilities.map(([title, description]) => (
+        <article class="border border-line p-8">
+          <h3 class="text-2xl font-bold">{title}</h3>
+          <p class="mt-4 text-mute">{description}</p>
+        </article>
+      ))}
     </div>
   </section>
   <section class="shell border-t border-line py-24">
     <h2 class="font-display text-title font-bold">Our Core Values</h2>
     <div class="mt-12 grid gap-8 md:grid-cols-2">
-      <article><h3 class="text-2xl font-bold">Customer Success First</h3><p class="mt-4 text-mute">Start with the client's objectives, operating needs, and definition of an accepted result.</p></article>
-      <article><h3 class="text-2xl font-bold">Technical Excellence</h3><p class="mt-4 text-mute">Define requirements and verify implementation against agreed acceptance checks.</p></article>
-      <article><h3 class="text-2xl font-bold">Transparency &amp; Integrity</h3><p class="mt-4 text-mute">Document scope, timelines, responsibilities, and limitations before work begins.</p></article>
-      <article><h3 class="text-2xl font-bold">Industry Understanding</h3><p class="mt-4 text-mute">Learn how the business operates before recommending a tool or workflow.</p></article>
+      <article>
+        <h3 class="text-2xl font-bold">Customer Success First</h3>
+        <p class="mt-4 text-mute">
+          Start with the client's objectives, operating needs, and definition of an accepted result.
+        </p>
+      </article>
+      <article>
+        <h3 class="text-2xl font-bold">Technical Excellence</h3>
+        <p class="mt-4 text-mute">Define requirements and verify implementation against agreed acceptance checks.</p>
+      </article>
+      <article>
+        <h3 class="text-2xl font-bold">Transparency &amp; Integrity</h3>
+        <p class="mt-4 text-mute">Document scope, timelines, responsibilities, and limitations before work begins.</p>
+      </article>
+      <article>
+        <h3 class="text-2xl font-bold">Industry Understanding</h3>
+        <p class="mt-4 text-mute">Learn how the business operates before recommending a tool or workflow.</p>
+      </article>
     </div>
   </section>
   <section class="shell border-t border-line py-24">
     <h2 class="font-display text-title font-bold">Where We Work</h2>
-    <p class="mt-6 max-w-3xl text-mute">ZiaFlow is based in Phoenix, Arizona and works with businesses across the United States through remote collaboration.</p>
-    <div class="mt-10 flex flex-wrap gap-4"><Button label="Contact ZiaFlow" href="/contact" /><Button label="Call (602) 834-4239" href="tel:+16028344239" variant="outline" /></div>
+    <p class="mt-6 max-w-3xl text-mute">
+      ZiaFlow is based in Phoenix, Arizona and works with businesses across the United States through remote
+      collaboration.
+    </p>
+    <div class="mt-10 flex flex-wrap gap-4">
+      <Button label="Contact ZiaFlow" href="/contact" />
+      <Button label="Call (602) 834-4239" href="tel:+16028344239" variant="outline" />
+    </div>
   </section>
 </Layout>

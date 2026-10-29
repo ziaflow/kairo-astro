@@ -11,11 +11,11 @@ const field =
 
 <Layout
   title={pageTitle('Contact Our Phoenix Digital Agency')}
-  description="Get in touch with ZiaFlow. Call (602) 834-4239 or schedule a free consultation for custom development, automation, and digital marketing solutions.">
+  description="Discuss your website, SEO, or automation project with ZiaFlow in Phoenix. Share your goals, current tools, budget, and timing to plan the next step.">
   <PageHero
-    lines={['Contact the', 'ZiaFlow team.']}
+    lines={['Discuss your', 'next project.']}
     accent={1}
-    intro="Ready to transform your business? Call us directly for immediate assistance or send us your project details by email.">
+    intro="Tell us what needs to work better: your website, search visibility, inquiry handling, or a manual process. Start with a short description of the problem.">
     <div class="flex flex-wrap gap-3 md:col-span-5 md:col-start-2" data-intro>
       <Button label="Call (602) 834-4239" href="tel:+16028344239" />
       <Button label="Book consultation" href={bookingUrl} variant="outline" />
@@ -25,11 +25,11 @@ const field =
   <section class="border-t border-line" aria-labelledby="contact-options">
     <div class="shell py-24 md:py-32">
       <h2 id="contact-options" class="max-w-[12ch] font-display text-title font-bold text-bone" data-split>
-        Start your digital transformation.
+        Start with the problem.
       </h2>
       <p class="mt-6 max-w-[48ch] text-lead text-mute">
-        Tell us about your project and we will get back to you within 24 hours. Whether you need custom development,
-        automation, or marketing solutions, our team is ready to help.
+        Share your website, current tools, and the outcome you need. We will review your inquiry and discuss fit,
+        missing details, and a useful next step. Any paid assessment or implementation is scoped before work begins.
       </p>
       <div class="mt-14 grid border-t border-l border-line md:grid-cols-3">
         <a href="mailto:info@ziaflow.com" class="group min-h-64 border-r border-b border-line p-8 hover:bg-ink-2">
@@ -45,7 +45,7 @@ const field =
         <a href={bookingUrl} class="group min-h-64 border-r border-b border-line p-8 hover:bg-ink-2">
           <p class="font-mono text-label text-signal uppercase">Schedule</p>
           <h3 class="mt-10 font-display text-2xl font-bold text-bone">Book a consultation</h3>
-          <p class="mt-4 text-mute">Choose a time for a straightforward discovery call with no sales pressure.</p>
+          <p class="mt-4 text-mute">Choose an available time to discuss your goals, current setup, and project fit.</p>
         </a>
       </div>
     </div>
@@ -101,7 +101,7 @@ const field =
               class={`${field} h-auto resize-y py-3`}
               name="message"
               rows="4"
-              placeholder="What are you trying to improve?"
+              placeholder="What needs to work better? Include your website, current tools, and any budget or timing constraints."
               required></textarea>
           </label>
         </div>

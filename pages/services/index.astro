@@ -5,18 +5,18 @@ import { bookingUrl, services } from '@/data/services';
 import Layout from '@/layouts/layout.astro';
 import { pageTitle } from '@/utils/generate-meta-data';
 
-const title = 'Phoenix Home Service Marketing | ZiaFlow';
+const title = 'Web, SEO & Automation Services in Phoenix | ZiaFlow';
 const description =
-  'Get more qualified local leads with Google Local Service Ads, optimized Google Business Profiles, review automation, and conversion-focused marketing.';
+  'Explore web development, SEO, advertising, and workflow automation for Arizona service businesses. Start with the part of your customer journey that needs attention.';
 ---
 
 <Layout title={pageTitle(title)} description={description}>
   <PageHero
-    lines={['Local growth,', 'engineered.']}
+    lines={['Web, marketing,', 'and automation.']}
     accent={1}
-    intro="Get more qualified local leads with LSAs, optimized Google Business Profiles, review automation, and conversion-focused local marketing.">
+    intro="Help customers find your business, understand your services, and reach the right person. Explore a focused project for your website, marketing, or inquiry-handling process.">
     <div class="md:col-span-5 md:col-start-2" data-intro>
-      <p class="font-mono text-label text-signal uppercase">Arizona home service marketing experts</p>
+      <p class="font-mono text-label text-signal uppercase">For Arizona service businesses</p>
       <div class="mt-6 flex flex-wrap gap-3">
         <Button label="Book consultation" href={bookingUrl} />
         <Button label="Call (602) 834-4239" href="tel:+16028344239" variant="outline" />
@@ -27,7 +27,7 @@ const description =
   <section class="border-t border-line" aria-labelledby="services-list">
     <div class="shell py-24 md:py-32">
       <h2 id="services-list" class="max-w-[14ch] font-display text-title font-bold text-bone" data-split>
-        Specialized services that move the numbers that matter.
+        Choose the problem to solve first.
       </h2>
       <div class="mt-14 grid border-t border-l border-line md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (

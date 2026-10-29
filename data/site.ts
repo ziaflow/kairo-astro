@@ -6,14 +6,14 @@ export const site: SiteConfig = {
   url: 'https://ziaflow.com',
   title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
   description:
-    'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a free consultation with our Phoenix team.',
+    'Phoenix web development, SEO, and lead follow-up automation for Arizona service businesses. Connect your website, inquiries, and CRM with ZiaFlow.',
   email: 'info@ziaflow.com',
   careersEmail: 'info@ziaflow.com',
   accent: '#A22A36',
   cta: {
-    primary: { label: 'Contact Us', href: '/contact' },
+    primary: { label: 'Discuss your project', href: '/contact' },
     secondary: {
-      label: 'Book Tech Consult',
+      label: 'Book a conversation',
       href: 'https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled',
     },
   },
