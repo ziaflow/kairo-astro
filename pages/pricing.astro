@@ -1,20 +1,28 @@
 ---
 import Button from '@/components/shared/ui/button.astro';
 import PageHero from '@/components/shared/page-hero.astro';
-import { bookingUrl } from '@/data/services';
 import Layout from '@/layouts/layout.astro';
 import { pageTitle } from '@/utils/generate-meta-data';
 
 const engagements = [
-  ['Strategy & audit', 'For teams that need a clear diagnosis, prioritized roadmap, and measurement plan before committing to a build.'],
-  ['Project delivery', 'A defined website, automation, SEO, advertising, cloud, or custom software engagement with clear scope and milestones.'],
-  ['Ongoing growth', 'Continuous optimization, reporting, maintenance, and campaign support after the core system is live.'],
+  [
+    'Strategy & audit',
+    'For teams that need a clear diagnosis, prioritized roadmap, and measurement plan before committing to a build.',
+  ],
+  [
+    'Project delivery',
+    'A defined website, automation, SEO, advertising, cloud, or custom software engagement with clear scope and milestones.',
+  ],
+  [
+    'Ongoing growth',
+    'Continuous optimization, reporting, maintenance, and campaign support after the core system is live.',
+  ],
 ];
 ---
 
 <Layout
-  title={pageTitle('Pricing & Transparent Packages')}
-  description="Explore flexible, transparent pricing for digital transformation, custom software, and AI automation tailored to your business goals.">
+  title={pageTitle('Project Scope & Pricing')}
+  description="Understand how ZiaFlow scopes assessments, website projects, automation, and ongoing support. Deliverables, fees, and payment milestones are agreed in writing.">
   <PageHero
     lines={['Pay for the', 'work you need.']}
     accent={1}
@@ -36,10 +44,11 @@ const engagements = [
       </div>
       <div class="mt-14 flex flex-col gap-6 border-t border-line pt-10 md:flex-row md:items-center md:justify-between">
         <p class="max-w-[54ch] text-lead text-mute">
-          Tell us what you are trying to change. We will recommend the smallest sensible scope and provide the investment, timeline, and deliverables in writing.
+          Tell us what you are trying to change. We will recommend the smallest sensible scope and provide the
+          investment, timeline, and deliverables in writing.
         </p>
         <div class="flex flex-wrap gap-3">
-          <Button label="Request a proposal" href={bookingUrl} />
+          <Button label="Discuss your project" href="/contact" />
           <Button label="Email ZiaFlow" href="mailto:info@ziaflow.com" variant="outline" />
         </div>
       </div>

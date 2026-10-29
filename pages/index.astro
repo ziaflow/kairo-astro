@@ -6,26 +6,124 @@ import BlogLatestPosts from '@/components/migration/BlogLatestPosts.astro';
 import Button from '@/components/shared/ui/button.astro';
 const metadata = {
   title: 'Phoenix Web Development & Digital Marketing Agency | ZiaFlow',
-  description: 'Custom websites, strategic SEO, PPC, and automation for Arizona businesses. Call (602) 834-4239 or schedule a consultation with ZiaFlow.',
+  description:
+    'Phoenix web development, SEO, and lead follow-up automation for Arizona service businesses. Connect your website, inquiries, and CRM with ZiaFlow.',
 };
 ---
+
 <Layout metadata={metadata}>
   <StructuralGridHero />
   <ZoltServiceMatrix />
-  <section class="shell">
-    <header class="section-head"><p class="eyebrow">Data-Driven Content Strategy</p><h2>Plan content around customer questions.</h2><p>Review search data, existing pages, and your service offering to decide what to update and what to write next.</p></header>
-    <div class="cards"><article class="card"><h3>Content Review</h3><p>Check existing pages for relevant information, navigation, metadata, and contact paths.</p></article><article class="card"><h3>Editorial Workflow</h3><p>Define topics, source material, review responsibilities, and publishing steps.</p></article></div>
+  <section class="shell" aria-labelledby="project-process">
+    <header class="section-head">
+      <p class="eyebrow">How we work</p>
+      <h2 id="project-process">Start with one business problem.</h2>
+      <p>
+        A missed inquiry, an unclear service page, or a manual handoff is a useful place to begin. We review what
+        happens today before recommending a project.
+      </p>
+    </header>
+    <div class="cards">
+      <article class="card">
+        <h3>1. Review the current process</h3>
+        <p>
+          Discuss your goal, current tools, and where work gets stuck. If a deeper assessment is needed, we agree its
+          scope and fee first.
+        </p>
+      </article>
+      <article class="card">
+        <h3>2. Agree the scope</h3>
+        <p>
+          Define deliverables, price, client responsibilities, and how you will approve the work. Implementation starts
+          after the agreement, required payment, and access are in place.
+        </p>
+      </article>
+      <article class="card">
+        <h3>3. Build, test, and hand over</h3>
+        <p>
+          Review the work against the agreed checks. Get instructions for using it, with any ongoing support defined
+          separately.
+        </p>
+      </article>
+    </div>
   </section>
   <section class="shell">
-    <header class="section-head"><h2>Frequently Asked Questions</h2><p>Services, process, and project scope.</p></header>
-    <details><summary>Do you work with businesses outside Arizona?</summary><p>ZiaFlow is based in Phoenix and works with businesses across the United States through remote collaboration.</p></details>
-    <details><summary>How do you measure success?</summary><p>We agree on acceptance criteria and the events or outcomes your existing systems can measure before implementation.</p></details>
-    <details><summary>What is included in marketing automation?</summary><p>The scope can include inquiry capture, assignment, scheduling, and reviewed follow-up workflows. Each project defines the systems, access, and responsibilities involved.</p></details>
+    <header class="section-head">
+      <p class="eyebrow">Data-Driven Content Strategy</p>
+      <h2>Plan content around customer questions.</h2>
+      <p>
+        Review search data, existing pages, and your service offering to decide what to update and what to write next.
+      </p>
+    </header>
+    <div class="cards">
+      <article class="card">
+        <h3>Content Review</h3>
+        <p>Check existing pages for relevant information, navigation, metadata, and contact paths.</p>
+      </article>
+      <article class="card">
+        <h3>Editorial Workflow</h3>
+        <p>Define topics, source material, review responsibilities, and publishing steps.</p>
+      </article>
+    </div>
   </section>
   <section class="shell">
-    <header class="section-head"><h2>Contact ZiaFlow</h2><p>Discuss your current website, tools, and project requirements.</p></header>
-    <div class="actions"><Button label="Call (602) 834-4239" href="tel:+16028344239" /><Button label="Send project details" href="/contact" variant="outline" /><Button label="Book consultation" href="/booking" variant="outline" /></div>
-    <p><a class="text-link" href="mailto:info@ziaflow.com">info@ziaflow.com</a> · Phoenix, Arizona</p>
+    <header class="section-head">
+      <h2>Frequently Asked Questions</h2>
+      <p>Services, process, and project scope.</p>
+    </header>
+    <details>
+      <summary>Do you work with businesses outside Arizona?</summary>
+      <p>
+        ZiaFlow is based in Phoenix and works with businesses across the United States through remote collaboration.
+      </p>
+    </details>
+    <details>
+      <summary>How do you measure success?</summary>
+      <p>
+        We agree on acceptance criteria and the events or outcomes your existing systems can measure before
+        implementation.
+      </p>
+    </details>
+    <details>
+      <summary>What is included in marketing automation?</summary>
+      <p>
+        The scope can include inquiry capture, assignment, scheduling, and reviewed follow-up workflows. Each project
+        defines the systems, access, and responsibilities involved.
+      </p>
+    </details>
+    <details>
+      <summary>Do I need a new website or CRM?</summary>
+      <p>
+        Not necessarily. We first review your existing setup. A focused improvement to a form, service page, or
+        follow-up process may be enough.
+      </p>
+    </details>
+    <details>
+      <summary>What should I bring to the first conversation?</summary>
+      <p>
+        Your website, the problem you want to solve, the tools you use, and any budget or timing constraints. You do not
+        need a technical specification to start.
+      </p>
+    </details>
   </section>
-  <BlogLatestPosts title="Digital Marketing Insights" information="Local SEO, automation, conversion, and web development articles." />
+  <section class="shell">
+    <header class="section-head">
+      <h2>What needs to work better?</h2>
+      <p>Tell us where inquiries or day-to-day work get stuck. We will review the fit and discuss the next step.</p>
+    </header>
+    <div class="actions">
+      <Button label="Discuss your project" href="/contact" />
+      <Button label="Call (602) 834-4239" href="tel:+16028344239" variant="outline" />
+    </div>
+    <p>
+      <a class="text-link" href="mailto:info@ziaflow.com">
+        info@ziaflow.com
+      </a>{' '}
+      · Phoenix, Arizona
+    </p>
+  </section>
+  <BlogLatestPosts
+    title="Digital Marketing Insights"
+    information="Local SEO, automation, conversion, and web development articles."
+  />
 </Layout>

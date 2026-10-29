@@ -1,116 +1,39 @@
 ---
 import Button from '@/components/shared/ui/button.astro';
-const services = [
-  {
-    id: 'ai-automation',
-    category: 'AI & Voice',
-    title: 'Autonomous AI & Voice Agents',
-    icon: 'tabler:robot',
-    description:
-      'Deploy 24/7 phone reception, scheduling assistance, and workflow automation for routine administrative tasks.',
-    highlights: [
-      'Voice intake and scheduling workflows',
-      'Instant calendar booking & sync',
-      'Context retention across calls',
-    ],
-    link: '/services/automation',
-  },
-  {
-    id: 'seo-citations',
-    category: 'Search & AI Citations',
-    title: 'AI Search & Local SEO',
-    icon: 'tabler:chart-arrows',
-    description:
-      'Improve search visibility through technical SEO, local content, and clearly structured business information.',
-    highlights: [
-      'Schema entity architecture',
-      'Local Phoenix Google Business Profile',
-      'Generative Engine Optimization (GEO)',
-    ],
-    link: '/services/seo',
-  },
-  {
-    id: 'custom-dev',
-    category: 'Web & Software',
-    title: 'High-Performance Web Engineering',
-    icon: 'tabler:code',
-    description:
-      'Fast, secure web applications built on modern serverless stacks. Designed around performance, accessibility, and clear conversion paths.',
-    highlights: [
-      'Astro & Next.js modern architecture',
-      'Core Web Vitals measurement',
-      'Custom client portals & integrations',
-    ],
-    link: '/services/web-development',
-  },
-  {
-    id: 'ppc-lsa',
-    category: 'Paid Acquisition',
-    title: 'PPC & Local Service Ads (LSA)',
-    icon: 'tabler:target',
-    description:
-      'High-intent lead generation combining Google Local Service Ads (pay-per-lead) with automated qualification and CRM routing.',
-    highlights: [
-      'Local Services Ads eligibility review',
-      'Real-time conversion tracking (GA4)',
-      'Lead quality dispute management',
-    ],
-    link: '/services/ppc',
-  },
-  {
-    id: 'cloud-security',
-    category: 'Cloud & Data',
-    title: 'Cloud Infrastructure & API Security',
-    icon: 'tabler:cloud-lock',
-    description:
-      'Enterprise AWS, Azure, and Supabase database architectures configured around your application requirements.',
-    highlights: ['Row-Level Security (RLS) enforcement', 'Automated data pipelines', 'Real-time sync & monitoring'],
-    link: '/services/cloud',
-  },
-  {
-    id: 'cro-analytics',
-    category: 'Conversion',
-    title: 'CRO & Conversion Architecture',
-    icon: 'tabler:click',
-    description:
-      'Turn bounces into pipeline. We diagnose drop-off points using heatmaps and telemetry, then optimize every conversion path.',
-    highlights: ['Clarity & GA4 behavioral audits', 'Frictionless multi-step lead forms', 'A/B landing page testing'],
-    link: '/services/cro',
-  },
-];
+import { services as servicePages } from '@/data/services';
+const featuredSlugs = ['web-development', 'automation', 'seo', 'ppc', 'cro', 'cloud'];
+const services = featuredSlugs.map((slug) => servicePages.find((service) => service.slug === slug)!);
 ---
 
 <section class="shell" id="services">
   <header class="section-head">
-    <p class="eyebrow">Integrated Capabilities</p>
-    <h2>Engineered for Measurable Growth</h2>
-    <p>
-      Full-stack digital transformation: autonomous AI agents, conversion-focused web builds, and strategic acquisition.
-    </p>
+    <p class="eyebrow">Services for Arizona businesses</p>
+    <h2>Improve the next step in your customer journey.</h2>
+    <p>Choose the work that addresses your current bottleneck, from a clearer website to more reliable follow-up.</p>
   </header>
   <div class="cards">
     {services.map((s) => (
-      <article class="card" id={s.id}>
-        <p class="eyebrow">{s.category}</p>
-        <h3>{s.title}</h3>
-        <p>{s.description}</p>
+      <article class="card" id={s.slug}>
+        <p class="eyebrow">{s.tagline}</p>
+        <h3>{s.name}</h3>
+        <p>{s.meta.description}</p>
         <ul>
-          {s.highlights.map((h) => (
-            <li>{h}</li>
+          {s.features.map((h) => (
+            <li>{h.title}</li>
           ))}
         </ul>
-        <a href={s.link}>Explore Service Details</a>
+        <a href={`/services/${s.slug}`}>Explore {s.name}</a>
       </article>
     ))}
   </div>
   <div class="card mt-10">
-    <h3>Need a custom technical roadmap?</h3>
-    <p>We evaluate your current stack and identify practical automation opportunities.</p>
+    <h3>Not sure where to start?</h3>
+    <p>
+      Tell us what happens today and what you want to improve. We will discuss whether a focused project or a separately
+      scoped assessment is the right next step.
+    </p>
     <div class="actions">
-      <Button
-        label="Schedule Free Audit"
-        href="https://outlook.office.com/book/ZiaFlowIntake@ziaflow.com/?ismsaljsauthenabled"
-      />
+      <Button label="Discuss your project" href="/contact" />
     </div>
   </div>
 </section>

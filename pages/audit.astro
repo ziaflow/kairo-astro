@@ -1,14 +1,35 @@
 ---
 import Layout from '@/layouts/layout.astro';
-const field = 'h-13 w-full border-b border-line-strong bg-transparent text-bone placeholder:text-dim focus:outline-none focus:border-bone';
+const field =
+  'h-13 w-full border-b border-line-strong bg-transparent text-bone placeholder:text-dim focus:outline-none focus:border-bone';
 ---
-<Layout title="Website & Conversion Review | ZiaFlow" description="Request a review of your website speed, search visibility, forms, and booking paths with ZiaFlow.">
-<section class="shell pt-40 pb-24">
-<p class="font-mono text-label text-signal uppercase">Website Review</p>
-<h1 class="mt-6 max-w-4xl font-display text-title font-bold">Review Your Website & Inquiry Process</h1>
-<p class="mt-8 max-w-3xl text-lead text-mute">Tell us about your website, its current challenges, and the customer actions you want to support. We will review your request and discuss an appropriate scope.</p>
-<div class="mt-14 grid gap-12 lg:grid-cols-12">
-<div class="lg:col-span-5"><h2 class="text-2xl font-bold">What Your Audit Covers</h2><ul class="mt-6 space-y-4 text-mute"><li>Core Web Vitals: mobile loading speed and responsiveness.</li><li>Conversion Leaks: forms, calls to action, and mobile booking friction.</li><li>Local &amp; Organic SEO: keyword positions, metadata, and local visibility.</li></ul><p class="mt-8">Include your website URL in the project details. For questions, <a class="underline" href="tel:+16028344239">call (602) 834-4239</a>.</p></div>
+
+<Layout
+  title="Website & Conversion Review | ZiaFlow"
+  description="Request a review of your website speed, search visibility, forms, and booking paths with ZiaFlow.">
+  <section class="shell pt-40 pb-24">
+    <p class="font-mono text-label text-signal uppercase">Website Review</p>
+    <h1 class="mt-6 max-w-4xl font-display text-title font-bold">Review Your Website & Inquiry Process</h1>
+    <p class="mt-8 max-w-3xl text-lead text-mute">
+      Tell us about your website, its current challenges, and the customer actions you want to support. We will review
+      your request and discuss an appropriate scope and fee before starting a detailed audit.
+    </p>
+    <div class="mt-14 grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <h2 class="text-2xl font-bold">What a scoped review can cover</h2>
+        <ul class="mt-6 space-y-4 text-mute">
+          <li>Core Web Vitals: mobile loading speed and responsiveness.</li>
+          <li>Conversion Leaks: forms, calls to action, and mobile booking friction.</li>
+          <li>Local &amp; Organic SEO: keyword positions, metadata, and local visibility.</li>
+        </ul>
+        <p class="mt-8">
+          Include your website URL in the project details. For questions,{' '}
+          <a class="underline" href="tel:+16028344239">
+            call (602) 834-4239
+          </a>
+          .
+        </p>
+      </div>
       <form action="/api/contact" method="post" class="lg:col-span-6 lg:col-start-7" data-contact-form>
         <input type="hidden" name="form_name" value="audit" />
         <input class="hidden" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -64,4 +85,6 @@ const field = 'h-13 w-full border-b border-line-strong bg-transparent text-bone 
         </div>
         <p class="mt-5 min-h-6 text-sm" role="status" aria-live="polite" data-contact-status></p>
       </form>
-</div></section></Layout>
+    </div>
+  </section>
+</Layout>
